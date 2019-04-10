@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:component_set1/MenuComponent.dart';
+// import 'package:component_set1/MenuComponent.dart';
+import 'package:component_set1/InputComponent.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  // int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
@@ -40,17 +41,37 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
+      body: Container(
+        padding: EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            InputComponent.inputTextWithCorner(
+                borderInputGray: Colors.grey,
+                inputBorderError: Colors.red,
+                corner: 5,
+                position: InputPosition.Center,
+                hintText: "test input",
+                keyboardType: TextInputType.numberWithOptions()
+                // suffixIcon:
+                ),
+            SizedBox(
+              height: 5,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+            InputComponent.inputTextWithCorner(
+              borderInputGray: Colors.grey,
+              inputBorderError: Colors.red,
+              corner: 5,
+              position: InputPosition.Center,
             ),
+            SizedBox(
+              height: 5,
+            ),
+            InputComponent.inputTextWithCorner(
+                borderInputGray: Colors.grey,
+                inputBorderError: Colors.red,
+                corner: 5,
+                position: InputPosition.Center),
           ],
         ),
       ),
