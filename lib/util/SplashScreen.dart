@@ -1,4 +1,4 @@
-import 'package:component_set1/SizeUtil.dart';
+import 'package:component_set1/util/SizeUtil.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen {

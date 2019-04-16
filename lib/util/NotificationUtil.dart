@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:component_set1/FontUtil.dart';
+import 'package:component_set1/util/FontUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:overlay_support/overlay_support.dart';
 

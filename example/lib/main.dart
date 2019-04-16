@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:component_set1/MenuComponent.dart';
-import 'package:component_set1/InputComponent.dart';
+import 'package:component_set1/component/InputComponent.dart';
 
 void main() => runApp(MyApp());
 
