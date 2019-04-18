@@ -80,8 +80,8 @@ class MenuButtonState extends State<MenuButton> {
           ? EdgeInsets.all(10)
           : EdgeInsets.fromLTRB(35, 10, 35, 10),
       child: Wrap(
-        spacing: 10,
-        alignment: WrapAlignment.start,
+        spacing: 2,
+        alignment: WrapAlignment.end,
         children: <Widget>[
           menu(
               textMenu: 'Notifikasi',
@@ -98,6 +98,13 @@ class MenuButtonState extends State<MenuButton> {
           menu(
               textMenu: 'Setting',
               iconMenu: IconDataLight(FontAwesomeId.fa_cog)),
+          menu(),
+          menu(),
+          menu(),
+          menu(),
+          menu(),
+          menu(),
+          menu(),
         ],
       ),
     );
