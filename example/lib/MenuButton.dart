@@ -70,6 +70,39 @@ class MenuButtonState extends State<MenuButton> {
     );
   }
 
+  Container mainMenu() {
+    return Container(
+      padding: EdgeInsets.all(20),
+      alignment: MediaQuery.of(context).orientation == Orientation.portrait
+          ? Alignment.center
+          : Alignment.topLeft,
+      margin: MediaQuery.of(context).orientation == Orientation.portrait
+          ? EdgeInsets.all(10)
+          : EdgeInsets.fromLTRB(35, 10, 35, 10),
+      child: Wrap(
+        spacing: 10,
+        alignment: WrapAlignment.start,
+        children: <Widget>[
+          menu(
+              textMenu: 'Notifikasi',
+              iconMenu: IconDataLight(FontAwesomeId.fa_acorn),
+              textBedge: 1),
+          menu(
+              textMenu: 'Job', iconMenu: IconDataLight(FontAwesomeId.fa_tasks)),
+          menu(
+              textMenu: 'Route',
+              iconMenu: IconDataLight(FontAwesomeId.fa_map_marked)),
+          menu(
+              textMenu: 'Job',
+              iconMenu: IconDataLight(FontAwesomeId.fa_file_alt)),
+          menu(
+              textMenu: 'Setting',
+              iconMenu: IconDataLight(FontAwesomeId.fa_cog)),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,61 +110,7 @@ class MenuButtonState extends State<MenuButton> {
         title: Text("menu data"),
       ),
       body: Column(
-        children: <Widget>[
-          Center(
-            child: Container(
-              // color: Colors.grey,
-              padding: EdgeInsets.all(20),
-              alignment:
-                  MediaQuery.of(context).orientation == Orientation.portrait
-                      ? Alignment.center
-                      : Alignment.topLeft,
-              margin: MediaQuery.of(context).orientation == Orientation.portrait
-                  ? EdgeInsets.all(10)
-                  : EdgeInsets.fromLTRB(35, 10, 35, 10),
-              child: Wrap(
-                spacing: 10,
-                alignment: WrapAlignment.start,
-                children: <Widget>[
-                  menu(
-                      textMenu: 'Notifikasi',
-                      iconMenu: IconDataLight(FontAwesomeId.fa_acorn),
-                      textBedge: 1),
-                  menu(
-                      textMenu: 'Job',
-                      iconMenu: IconDataLight(FontAwesomeId.fa_tasks)),
-                  menu(
-                      textMenu: 'Route',
-                      iconMenu: IconDataLight(FontAwesomeId.fa_map_marked)),
-                  menu(
-                      textMenu: 'Job',
-                      iconMenu: IconDataLight(FontAwesomeId.fa_file_alt)),
-                  menu(
-                      textMenu: 'Setting',
-                      iconMenu: IconDataLight(FontAwesomeId.fa_cog)),
-                ],
-              ),
-            ),
-          ),
-          Text("dagdgsgsdg"),
-          // Container(
-          //   height: 300,
-          //   width: 300,
-          //   decoration: BoxDecoration(
-          //     gradient: LinearGradient(
-          //       begin: Alignment.center,
-          //       end: Alignment(
-          //           1, 0.1), // 10% of the width, so there are ten blinds.
-          //       colors: [
-          //         const Color(0xFF665EFF),
-          //         const Color(0xFFFF4F9A)
-          //       ], // whitish to gray
-          //       tileMode:
-          //           TileMode.clamp, // repeats the gradient over the canvas
-          //     ),
-          //   ),
-          // )
-        ],
+        children: <Widget>[mainMenu()],
       ),
     );
   }
