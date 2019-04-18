@@ -11,6 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   overlay_support: ^0.1.0
+  component_icons:
+    git:
+      url: https://github.com/Renoldi/component_icon.git
 
 dev_dependencies:
   flutter_test:

@@ -29,6 +29,22 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.11"
+  component_icons:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "9540b73e238a1ca1ff633391fd0282d6297b1b9a"
+      url: "https://github.com/Renoldi/component_icon.git"
+    source: git
+    version: "1.0.0+1"
+  cupertino_icons:
+    dependency: transitive
+    description:
+      name: cupertino_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
   flutter:
     dependency: "direct main"
     description: flutter
