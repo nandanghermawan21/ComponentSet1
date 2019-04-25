@@ -55,6 +55,7 @@ class ButtonComponent {
       double radius = 5,
       double fontSize = 14,
       String fontFamily,
+      Color textColor = Colors.white,
       VoidCallback onPressed}) {
     return GestureDetector(
       onTap: onPressed,
@@ -68,9 +69,7 @@ class ButtonComponent {
           child: Text(
             text,
             style: TextStyle(
-                color: Colors.white,
-                fontSize: fontSize,
-                fontFamily: fontFamily),
+                color: textColor, fontSize: fontSize, fontFamily: fontFamily),
           ),
         ),
       ),
