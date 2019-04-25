@@ -51,7 +51,7 @@ class ButtonComponent {
 
   static Widget roundedButton(
       {String text = "",
-      Color color = Colors.blueAccent,
+      Color colorBackground = Colors.blueAccent,
       double radius = 5,
       VoidCallback onPressed}) {
     return GestureDetector(
@@ -60,7 +60,7 @@ class ButtonComponent {
         width: double.infinity,
         height: 50,
         decoration: new BoxDecoration(
-            color: Colors.green,
+            color: colorBackground,
             borderRadius: BorderRadius.all(Radius.circular(radius))),
         child: Center(
           child: Text(
