@@ -24,7 +24,7 @@ class InputComponent {
       VoidCallback onTap,
       // VoidCallback onEditingComplete,
       FocusNode focusnode,
-      TextInputAction textInputAction = TextInputAction.continueAction,
+      TextInputAction textInputAction = TextInputAction.done,
       TextAlign textAlign = TextAlign.left}) {
     return TextField(
       onTap: onTap,
