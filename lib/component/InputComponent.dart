@@ -16,13 +16,12 @@ class InputComponent {
       TextEditingController controller,
       StateInput stateInput = StateInput.Enable,
       ValueChanged<String> onChanged,
-      ValueChanged<String> onSubmitted,
+      ValueChanged<String> onSubmited,
       bool numberOnly = false,
       Color inputBorderError = Colors.redAccent,
       Color borderInputGray = Colors.greenAccent,
       bool autoFocus = false,
       VoidCallback onTap,
-      VoidCallback onSubmited,
       VoidCallback onEditingComplete,
       FocusNode focusnode,
       TextAlign textAlign = TextAlign.left}) {
@@ -31,7 +30,7 @@ class InputComponent {
       focusNode: focusnode,
       autofocus: autoFocus,
       onChanged: onChanged,
-      onSubmitted: onSubmitted,
+      onSubmitted: onSubmited,
       onEditingComplete: onEditingComplete,
       inputFormatters:
           numberOnly == true ? [WhitelistingTextInputFormatter.digitsOnly] : [],
