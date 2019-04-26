@@ -16,7 +16,7 @@ class InputComponent {
       TextEditingController controller,
       StateInput stateInput = StateInput.Enable,
       ValueChanged<String> onChanged,
-      // ValueChanged<String> onSubmited,
+      ValueChanged<String> onSubmited,
       bool numberOnly = false,
       Color inputBorderError = Colors.redAccent,
       Color borderInputGray = Colors.greenAccent,
@@ -31,6 +31,7 @@ class InputComponent {
       focusNode: focusnode,
       autofocus: autoFocus,
       onChanged: onChanged,
+      onSubmitted: onSubmited,
       textInputAction: textInputAction,
       // onEditingComplete: onEditingComplete,
       inputFormatters:
