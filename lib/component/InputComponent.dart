@@ -3,29 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class InputComponent {
-  static TextField inputTextWithCorner({
-    position = InputPosition.Center,
-    double corner = 0,
-    hintText = "",
-    bool obscureText = false,
-    String fontsFamily = FontUtil.Primary,
-    Color fontColor = Colors.black,
-    TextInputType keyboardType = TextInputType.text,
-    Color hintColor = Colors.grey,
-    Widget suffixIcon,
-    TextEditingController controller,
-    StateInput stateInput = StateInput.Enable,
-    ValueChanged<String> onChanged,
-    ValueChanged<String> onSubmitted,
-    bool numberOnly = false,
-    Color inputBorderError = Colors.redAccent,
-    Color borderInputGray = Colors.greenAccent,
-    bool autoFocus = false,
-    VoidCallback onTap,
-    VoidCallback onSubmited,
-    VoidCallback onEditingComplete,
-    FocusNode focusnode,
-  }) {
+  static TextField inputTextWithCorner(
+      {position = InputPosition.Center,
+      double corner = 0,
+      hintText = "",
+      bool obscureText = false,
+      String fontsFamily = FontUtil.Primary,
+      Color fontColor = Colors.black,
+      TextInputType keyboardType = TextInputType.text,
+      Color hintColor = Colors.grey,
+      Widget suffixIcon,
+      TextEditingController controller,
+      StateInput stateInput = StateInput.Enable,
+      ValueChanged<String> onChanged,
+      ValueChanged<String> onSubmitted,
+      bool numberOnly = false,
+      Color inputBorderError = Colors.redAccent,
+      Color borderInputGray = Colors.greenAccent,
+      bool autoFocus = false,
+      VoidCallback onTap,
+      VoidCallback onSubmited,
+      VoidCallback onEditingComplete,
+      FocusNode focusnode,
+      TextAlign textAlign = TextAlign.left}) {
     return TextField(
       onTap: onTap,
       focusNode: focusnode,
@@ -40,6 +40,7 @@ class InputComponent {
       obscureText: obscureText,
       keyboardType: keyboardType,
       controller: controller,
+      textAlign: textAlign,
       decoration: new InputDecoration(
           border: new OutlineInputBorder(
             borderSide: new BorderSide(
