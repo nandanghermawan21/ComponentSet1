@@ -19,9 +19,11 @@ class InputComponent {
       bool numberOnly = false,
       Color inputBorderError = Colors.redAccent,
       Color borderInputGray = Colors.greenAccent,
+      bool autoFocus = false,
       VoidCallback onTap}) {
     return TextField(
       onTap: onTap,
+      autofocus: autoFocus,
       onChanged: onChanged,
       inputFormatters:
           numberOnly == true ? [WhitelistingTextInputFormatter.digitsOnly] : [],
