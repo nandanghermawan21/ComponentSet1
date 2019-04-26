@@ -31,7 +31,6 @@ class InputComponent {
       focusNode: focusnode,
       autofocus: autoFocus,
       onChanged: onChanged,
-      // onSubmitted: onSubmited,
       textInputAction: textInputAction,
       // onEditingComplete: onEditingComplete,
       inputFormatters:
