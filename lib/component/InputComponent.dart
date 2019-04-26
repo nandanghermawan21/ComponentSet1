@@ -24,7 +24,7 @@ class InputComponent {
       VoidCallback onTap,
       // VoidCallback onEditingComplete,
       FocusNode focusnode,
-      TextInputAction textInputAction = TextInputAction.done,
+      TextInputAction textInputAction = TextInputAction.continueAction,
       TextAlign textAlign = TextAlign.left}) {
     return TextField(
       onTap: onTap,
@@ -32,7 +32,7 @@ class InputComponent {
       autofocus: autoFocus,
       onChanged: onChanged,
       // onSubmitted: onSubmited,
-      // textInputAction: textInputAction,
+      textInputAction: textInputAction,
       // onEditingComplete: onEditingComplete,
       inputFormatters:
           numberOnly == true ? [WhitelistingTextInputFormatter.digitsOnly] : [],
