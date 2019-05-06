@@ -122,6 +122,29 @@ class InputComponent {
           suffixIcon: suffixIcon),
     );
   }
+
+  static Container dropDownWithCorner(
+      {double corner = 5,
+      double padding = 10,
+      String value,
+      List<DropdownMenuItem<String>> items,
+      ValueChanged<String> onChangeds,
+      String hint = "hint",
+      Color borderColor = Colors.black38}) {
+    return Container(
+      padding: EdgeInsets.only(left: 10, right: 10),
+      decoration: new BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(corner)),
+          border: new Border.all(color: borderColor)),
+      child: DropdownButton(
+        value: value,
+        items: items,
+        onChanged: onChangeds,
+        isExpanded: true,
+        hint: Text(hint),
+      ),
+    );
+  }
 }
 
 enum InputPosition {
