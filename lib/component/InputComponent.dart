@@ -28,7 +28,7 @@ class InputComponent {
       TextAlign textAlign = TextAlign.left,
       bool readOnly = false}) {
     return TextField(
-      enabled: false,
+      enabled: readOnly == true ? false : true,
       onTap: onTap,
       focusNode: focusnode,
       autofocus: autoFocus,
