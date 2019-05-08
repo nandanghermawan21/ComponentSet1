@@ -25,12 +25,14 @@ class InputComponent {
       FocusNode focusnode,
       VoidCallback onEditingComplete,
       TextInputAction textInputAction = TextInputAction.done,
-      TextAlign textAlign = TextAlign.left}) {
+      TextAlign textAlign = TextAlign.left,
+      bool readOnly = false}) {
     return TextField(
+      enabled: readOnly == true ? false : true,
       onTap: onTap,
       focusNode: focusnode,
       autofocus: autoFocus,
-      onChanged: onChanged,
+      onChanged:  onChanged,
       onSubmitted: onSubmited,
       textInputAction: textInputAction,
       onEditingComplete: onEditingComplete,
