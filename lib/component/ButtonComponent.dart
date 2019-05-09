@@ -57,11 +57,12 @@ class ButtonComponent {
       String fontFamily,
       Color textColor = Colors.white,
       double height = 50,
+      double width = double.infinity,
       VoidCallback onPressed}) {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: double.infinity,
+        width: width,
         height: height,
         decoration: new BoxDecoration(
             color: colorBackground,
