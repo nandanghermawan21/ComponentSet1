@@ -13,6 +13,7 @@ class InputComponent {
       TextInputType keyboardType = TextInputType.text,
       Color hintColor = Colors.grey,
       Widget suffixIcon,
+      Widget prefixIcon,
       TextEditingController controller,
       StateInput stateInput = StateInput.Enable,
       ValueChanged<String> onChanged,
@@ -121,7 +122,8 @@ class InputComponent {
           hintStyle: new TextStyle(color: hintColor),
           hintText: hintText,
           fillColor: Colors.white70,
-          suffixIcon: suffixIcon),
+          suffixIcon: suffixIcon,
+          prefixIcon: prefixIcon),
     );
   }
 
