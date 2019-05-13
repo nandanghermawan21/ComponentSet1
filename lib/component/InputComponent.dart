@@ -137,10 +137,12 @@ class InputComponent {
       List<DropdownMenuItem<String>> items,
       ValueChanged<String> onChangeds,
       String hint = "hint",
-      Color borderColor = Colors.black38}) {
+      Color borderColor = Colors.black38,
+      Color backgroundColor}) {
     return Container(
       padding: EdgeInsets.only(left: 10, right: 10),
       decoration: new BoxDecoration(
+          color: backgroundColor,
           borderRadius: BorderRadius.all(Radius.circular(corner)),
           border: new Border.all(color: borderColor)),
       child: DropdownButton(
