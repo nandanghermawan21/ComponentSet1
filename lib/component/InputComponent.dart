@@ -27,8 +27,10 @@ class InputComponent {
       VoidCallback onEditingComplete,
       TextInputAction textInputAction = TextInputAction.done,
       TextAlign textAlign = TextAlign.left,
-      bool readOnly = false}) {
+      bool readOnly = false,
+      int maxLines}) {
     return TextField(
+      maxLines: maxLines,
       enabled: readOnly == true ? false : true,
       onTap: onTap,
       focusNode: focusnode,
