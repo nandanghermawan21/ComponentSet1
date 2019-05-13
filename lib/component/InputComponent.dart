@@ -28,7 +28,8 @@ class InputComponent {
       TextInputAction textInputAction = TextInputAction.done,
       TextAlign textAlign = TextAlign.left,
       bool readOnly = false,
-      int maxLines}) {
+      int maxLines,
+      Color backgroundColor}) {
     return TextField(
       maxLines: maxLines,
       enabled: readOnly == true ? false : true,
@@ -42,7 +43,7 @@ class InputComponent {
       inputFormatters:
           numberOnly == true ? [WhitelistingTextInputFormatter.digitsOnly] : [],
       style:
-          TextStyle(fontFamily: fontsFamily, fontSize: 14.0, color: fontColor),
+          TextStyle(fontFamily: fontsFamily, fontSize: 14.0, color: fontColor,),
       obscureText: obscureText,
       keyboardType: keyboardType,
       controller: controller,
@@ -123,7 +124,7 @@ class InputComponent {
           filled: true,
           hintStyle: new TextStyle(color: hintColor),
           hintText: hintText,
-          fillColor: Colors.white70,
+          fillColor: backgroundColor??Colors.white70,
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon),
     );
