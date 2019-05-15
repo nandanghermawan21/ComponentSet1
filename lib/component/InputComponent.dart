@@ -27,8 +27,11 @@ class InputComponent {
       VoidCallback onEditingComplete,
       TextInputAction textInputAction = TextInputAction.done,
       TextAlign textAlign = TextAlign.left,
-      bool readOnly = false}) {
+      bool readOnly = false,
+      int maxLines,
+      Color backgroundColor}) {
     return TextField(
+      maxLines: maxLines,
       enabled: readOnly == true ? false : true,
       onTap: onTap,
       focusNode: focusnode,
@@ -40,7 +43,7 @@ class InputComponent {
       inputFormatters:
           numberOnly == true ? [WhitelistingTextInputFormatter.digitsOnly] : [],
       style:
-          TextStyle(fontFamily: fontsFamily, fontSize: 14.0, color: fontColor),
+          TextStyle(fontFamily: fontsFamily, fontSize: 14.0, color: fontColor,),
       obscureText: obscureText,
       keyboardType: keyboardType,
       controller: controller,
@@ -121,7 +124,7 @@ class InputComponent {
           filled: true,
           hintStyle: new TextStyle(color: hintColor),
           hintText: hintText,
-          fillColor: Colors.white70,
+          fillColor: backgroundColor??Colors.white70,
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon),
     );
@@ -134,10 +137,12 @@ class InputComponent {
       List<DropdownMenuItem<String>> items,
       ValueChanged<String> onChangeds,
       String hint = "hint",
-      Color borderColor = Colors.black38}) {
+      Color borderColor = Colors.black38,
+      Color backgroundColor}) {
     return Container(
       padding: EdgeInsets.only(left: 10, right: 10),
       decoration: new BoxDecoration(
+          color: backgroundColor,
           borderRadius: BorderRadius.all(Radius.circular(corner)),
           border: new Border.all(color: borderColor)),
       child: DropdownButton(
