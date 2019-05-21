@@ -1,11 +1,11 @@
 class FontUtil {
-  static const Primary = "SF-Pro-Text";
-  static const Scondary = "SF-Pro-Display";
+  String primary = "SF-Pro-Text";
+  String scondary = "SF-Pro-Display";
 
-  static double xs = 10;
-  static double s = 12;
-  static double m = 14;
-  static double l = 16;
-  static double xl = 18;
-  static double xxl = 20;
+  double xs = 10;
+  double s = 12;
+  double m = 14;
+  double l = 16;
+  double xl = 18;
+  double xxl = 20;
 }

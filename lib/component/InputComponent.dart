@@ -8,7 +8,7 @@ class InputComponent {
       double corner = 0,
       hintText = "",
       bool obscureText = false,
-      String fontsFamily = FontUtil.Primary,
+      String fontsFamily = "",
       Color fontColor = Colors.black,
       TextInputType keyboardType = TextInputType.text,
       Color hintColor = Colors.grey,

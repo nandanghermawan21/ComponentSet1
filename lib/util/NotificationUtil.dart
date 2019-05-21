@@ -51,8 +51,8 @@ class NotificationUtil {
                     title,
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: FontUtil.m,
-                        fontFamily: FontUtil.Primary,
+                        fontSize: FontUtil().m,
+                        fontFamily: FontUtil().primary,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -63,9 +63,9 @@ class NotificationUtil {
                     body,
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: FontUtil.s,
+                        fontSize: FontUtil().s,
                         fontWeight: FontWeight.bold,
-                        fontFamily: FontUtil.Primary),
+                        fontFamily: FontUtil().primary),
                   ),
                 ),
               ],

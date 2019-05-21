@@ -19,12 +19,16 @@ class DashboardComponent {
         Text(
           value,
           style: TextStyle(
-              fontFamily: FontUtil.Scondary, fontSize: 14, color: Colors.white),
+              fontFamily: FontUtil().scondary,
+              fontSize: 14,
+              color: Colors.white),
         ),
         Text(
           title,
           style: TextStyle(
-              fontFamily: FontUtil.Scondary, fontSize: 12, color: Colors.white),
+              fontFamily: FontUtil().scondary,
+              fontSize: 12,
+              color: Colors.white),
         ),
       ],
     );
@@ -55,7 +59,7 @@ class DashboardComponent {
                   padding: const EdgeInsets.all(3.0),
                   child: Text(title,
                       style: TextStyle(
-                          fontFamily: FontUtil.Primary,
+                          fontFamily: FontUtil().primary,
                           fontSize: 18,
                           fontWeight: FontWeight.bold)),
                 ),
@@ -63,7 +67,7 @@ class DashboardComponent {
                   padding: const EdgeInsets.all(3.0),
                   child: Text(value,
                       style: TextStyle(
-                          fontFamily: FontUtil.Primary, fontSize: 16)),
+                          fontFamily: FontUtil().primary, fontSize: 16)),
                 ),
                 Container(
                   margin: EdgeInsets.all(4.0),

@@ -17,7 +17,7 @@ class ButtonComponent {
       double fontSize = 14.0,
       double radius = 0,
       bool circuler = false,
-      String fontFamily = FontUtil.Primary,
+      String fontFamily = "",
       VoidCallback onTap}) {
     return ButtonTheme(
         minWidth: widht,
