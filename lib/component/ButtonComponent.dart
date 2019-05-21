@@ -1,4 +1,3 @@
-import 'package:component_set1/util/FontUtil.dart';
 import 'package:flutter/material.dart';
 
 class ButtonComponent {
