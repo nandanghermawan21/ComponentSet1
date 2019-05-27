@@ -57,6 +57,7 @@ class ButtonComponent {
       Color textColor = Colors.white,
       double height = 50,
       double width = double.infinity,
+      Border border,
       VoidCallback onPressed}) {
     return GestureDetector(
       onTap: onPressed,
@@ -64,6 +65,7 @@ class ButtonComponent {
         width: width,
         height: height,
         decoration: new BoxDecoration(
+            border: border,
             color: colorBackground,
             borderRadius: BorderRadius.all(Radius.circular(radius))),
         child: Center(
