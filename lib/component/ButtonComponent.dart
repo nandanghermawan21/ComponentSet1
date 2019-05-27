@@ -58,6 +58,7 @@ class ButtonComponent {
       double height = 50,
       double width = double.infinity,
       Border border,
+      TextStyle textstyle,
       VoidCallback onPressed}) {
     return GestureDetector(
       onTap: onPressed,
@@ -71,8 +72,11 @@ class ButtonComponent {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(
-                color: textColor, fontSize: fontSize, fontFamily: fontFamily),
+            style: textstyle ??
+                TextStyle(
+                    color: textColor,
+                    fontSize: fontSize,
+                    fontFamily: fontFamily),
           ),
         ),
       ),
