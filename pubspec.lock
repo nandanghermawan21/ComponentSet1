@@ -55,6 +55,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  groovin_widgets:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "5973902dfe2c4dcf94361be2eb50cb0329cb3ba6"
+      url: "https://github.com/nandanghermawan21/GroovinWidgets.git"
+    source: git
+    version: "1.4.2"
   matcher:
     dependency: transitive
     description:
@@ -97,6 +106,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+  reorderables:
+    dependency: "direct main"
+    description:
+      name: reorderables
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.9"
   sky_engine:
     dependency: transitive
     description: flutter
