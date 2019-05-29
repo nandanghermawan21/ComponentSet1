@@ -46,9 +46,9 @@ class HolcimBetonModal {
   static modalBottomComfirmation(
     BuildContext context, {
     VoidCallback onConfirm,
-    Text titleText,
-    Text descriptionText,
-    Text confirmText,
+    String titleText,
+    String descriptionText,
+    String confirmText,
     TextStyle titleTextStyle,
     TextStyle descriptionTextStyle,
     TextStyle confirmTextStyle,
@@ -67,11 +67,12 @@ class HolcimBetonModal {
                     alignment: Alignment.topCenter,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
-                      child: Text(titleText?? "Confirmation",
-                          style: titleTextStyle ?? TextStyle(
-                            fontFamily: FontUtil().primary,
-                            fontSize: FontUtil().xxl,
-                          )),
+                      child: Text(titleText ?? "Confirmation",
+                          style: titleTextStyle ??
+                              TextStyle(
+                                fontFamily: FontUtil().primary,
+                                fontSize: FontUtil().xxl,
+                              )),
                     ),
                   ),
                   Align(
@@ -80,11 +81,13 @@ class HolcimBetonModal {
                       padding:
                           const EdgeInsets.only(left: 15, top: 20, right: 15),
                       child: Text(
-                        descriptionText ?? "Are you sure to confirm this action?",
-                        style: descriptionTextStyle ?? TextStyle(
-                          fontFamily: FontUtil().primary,
-                          fontSize: FontUtil().m,
-                        ),
+                        descriptionText ??
+                            "Are you sure to confirm this action?",
+                        style: descriptionTextStyle ??
+                            TextStyle(
+                              fontFamily: FontUtil().primary,
+                              fontSize: FontUtil().m,
+                            ),
                       ),
                     ),
                   ),
@@ -95,16 +98,16 @@ class HolcimBetonModal {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ButtonComponent.roundedButton(
-                    width: 200,
-                    text: confirmText ?? "Confirmation",
-                    textstyle: confirmTextStyle ?? TextStyle(
-                      color: Colors.white,
-                      fontFamily: FontUtil().primary,
-                      fontSize: FontUtil().l,
-                      fontWeight: FontWeight.bold
-                    ),
-                    colorBackground: bottonCollor ?? HolcimBetonColor().mainColor
-                  ),
+                      width: 200,
+                      text: confirmText ?? "Confirmation",
+                      textstyle: confirmTextStyle ??
+                          TextStyle(
+                              color: Colors.white,
+                              fontFamily: FontUtil().primary,
+                              fontSize: FontUtil().l,
+                              fontWeight: FontWeight.bold),
+                      colorBackground:
+                          bottonCollor ?? HolcimBetonColor().mainColor),
                 ),
               )
             ],
