@@ -1,9 +1,8 @@
 import 'package:component_set1/component/ButtonComponent.dart';
 import 'package:component_set1/util/ColorUtil.dart';
 import 'package:component_set1/util/FontUtil.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:groovin_widgets/groovin_widgets.dart';
+import 'package:component_set1/custom/material_custom.dart';
 
 class ModalComponent {
   static void bottomModalWithCorner(BuildContext context,
@@ -14,27 +13,30 @@ class ModalComponent {
       Color handleColor}) {
     showModalBottomSheet(
       context: context,
+      theme: ThemeData(canvasColor: Colors.transparent),
       builder: (builder) {
-        return Container(
-          height: height ?? 250.0,
-          decoration: BoxDecoration(
-              color: backgroundColor ?? Colors.white,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(corner ?? 15),
-                  topRight: Radius.circular(corner ?? 15))),
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ModalDrawerHandle(
-                  handleColor: handleColor ?? Colors.indigoAccent,
+        return Material(
+          child: Container(
+            height: height ?? 250.0,
+            decoration: BoxDecoration(
+                color: backgroundColor ?? Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(corner ?? 15),
+                    topRight: Radius.circular(corner ?? 15))),
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ModalDrawerHandle(
+                    handleColor: handleColor ?? Colors.indigoAccent,
+                  ),
                 ),
-              ),
-              child ?? Container()
-            ],
+                child ?? Container()
+              ],
+            ),
           ),
         );
       },
