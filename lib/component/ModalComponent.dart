@@ -70,12 +70,12 @@ class ModalComponent {
         barrierDismissible: dismisable,
         builder: (context) => isConfirm
             ? AlertDialog(
+                backgroundColor: backgroundColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(radius)),
                 content: SingleChildScrollView(
                   child: Container(
                     width: 343,
-                    color: backgroundColor,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,12 +145,12 @@ class ModalComponent {
                 ],
               )
             : AlertDialog(
+                backgroundColor: backgroundColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(radius)),
                 content: SingleChildScrollView(
                   child: Center(
                     child: Container(
-                      color: backgroundColor,
                       width: 343,
                       child: Column(
                         children: <Widget>[
