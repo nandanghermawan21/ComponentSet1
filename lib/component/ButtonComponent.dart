@@ -49,7 +49,7 @@ class ButtonComponent {
   }
 
   static Widget roundedButton(
-      {String text = "",
+      {String text = "", //
       Color colorBackground = Colors.blueAccent,
       double radius = 5,
       double fontSize = 14,
@@ -59,6 +59,7 @@ class ButtonComponent {
       double width = double.infinity,
       Border border,
       TextStyle textstyle,
+      Widget child,
       VoidCallback onPressed}) {
     return GestureDetector(
       onTap: onPressed,
@@ -70,14 +71,16 @@ class ButtonComponent {
             color: colorBackground,
             borderRadius: BorderRadius.all(Radius.circular(radius))),
         child: Center(
-          child: Text(
-            text,
-            style: textstyle ??
-                TextStyle(
-                    color: textColor,
-                    fontSize: fontSize,
-                    fontFamily: fontFamily),
-          ),
+          child: child != null
+              ? child
+              : Text(
+                  text,
+                  style: textstyle ??
+                      TextStyle(
+                          color: textColor,
+                          fontSize: fontSize,
+                          fontFamily: fontFamily),
+                ),
         ),
       ),
     );
