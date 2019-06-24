@@ -64,6 +64,9 @@ class ModalComponent {
     TextAlign titileAlign,
     TextAlign descriptionAlign,
     Color backgroundColor,
+    Color cancleButtonColor,
+    Color confirmButtonColor,
+    Widget customAction,
   }) {
     showDialog(
         context: context,
@@ -107,10 +110,10 @@ class ModalComponent {
                     ),
                   ),
                 ),
-                actions: <Widget>[
+                actions: customAction ?? <Widget>[
                   cancleButton == true
                       ? ButtonTheme(
-                          buttonColor: Colors.grey,
+                          buttonColor: cancleButtonColor,
                           minWidth: 100,
                           height: 48,
                           child: RaisedButton(
@@ -128,7 +131,7 @@ class ModalComponent {
                         )
                       : Container(),
                   ButtonTheme(
-                    buttonColor: Colors.orange,
+                    buttonColor: confirmButtonColor,
                     minWidth: 100,
                     height: 48,
                     child: RaisedButton(
