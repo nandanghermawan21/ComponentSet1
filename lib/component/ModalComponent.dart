@@ -76,16 +76,18 @@ class ModalComponent {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          title,
-                          textAlign: TextAlign.center,
-                          style: titleStyle ??
-                              TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: fontFamily,
-                                  fontSize: titleFontSize,
-                                  fontWeight: FontWeight.bold),
-                        ),
+                        title.isNotEmpty
+                            ? Text(
+                                title,
+                                textAlign: TextAlign.center,
+                                style: titleStyle ??
+                                    TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: fontFamily,
+                                        fontSize: titleFontSize,
+                                        fontWeight: FontWeight.bold),
+                              )
+                            : Container(),
                         Padding(
                           padding: EdgeInsets.all(5),
                         ),
@@ -154,15 +156,17 @@ class ModalComponent {
                           Padding(
                             padding: EdgeInsets.only(top: 5, bottom: 10),
                           ),
-                          Text(title == '' ? "main titile" : title,
-                              style: titleStyle ??
-                                  TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: fontFamily,
-                                      fontSize: titleFontSize,
-                                      fontWeight: FontWeight.bold)),
+                          title.isNotEmpty
+                              ? Text(title,
+                                  style: titleStyle ??
+                                      TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: fontFamily,
+                                          fontSize: titleFontSize,
+                                          fontWeight: FontWeight.bold))
+                              : Container(),
                           Text(
-                            description == '' ? "second title" : description,
+                            description,
                             style: descriptionStyle ??
                                 TextStyle(
                                     fontFamily: fontFamily,
