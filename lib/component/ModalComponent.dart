@@ -66,7 +66,7 @@ class ModalComponent {
     Color backgroundColor,
     Color cancleButtonColor,
     Color confirmButtonColor,
-    Widget customAction,
+    List<Widget> customAction,
   }) {
     showDialog(
         context: context,
@@ -110,42 +110,44 @@ class ModalComponent {
                     ),
                   ),
                 ),
-                actions: customAction ?? <Widget>[
-                  cancleButton == true
-                      ? ButtonTheme(
-                          buttonColor: cancleButtonColor,
-                          minWidth: 100,
-                          height: 48,
-                          child: RaisedButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            shape: new RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(5.0)),
-                            child: Text(cancleText,
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: fontFamily,
-                                    fontSize: fontSize)),
-                          ),
-                        )
-                      : Container(),
-                  ButtonTheme(
-                    buttonColor: confirmButtonColor,
-                    minWidth: 100,
-                    height: 48,
-                    child: RaisedButton(
-                      onPressed: onConfirm,
-                      shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(5.0)),
-                      child: Text(confirmText,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: fontFamily,
-                              fontSize: fontSize)),
-                    ),
-                  ),
-                ],
+                actions: customAction ??
+                    <Widget>[
+                      cancleButton == true
+                          ? ButtonTheme(
+                              buttonColor: cancleButtonColor,
+                              minWidth: 100,
+                              height: 48,
+                              child: RaisedButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                shape: new RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(5.0)),
+                                child: Text(cancleText,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: fontFamily,
+                                        fontSize: fontSize)),
+                              ),
+                            )
+                          : Container(),
+                      ButtonTheme(
+                        buttonColor: confirmButtonColor,
+                        minWidth: 100,
+                        height: 48,
+                        child: RaisedButton(
+                          onPressed: onConfirm,
+                          shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(5.0)),
+                          child: Text(confirmText,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: fontFamily,
+                                  fontSize: fontSize)),
+                        ),
+                      ),
+                    ],
               )
             : AlertDialog(
                 backgroundColor: backgroundColor,
