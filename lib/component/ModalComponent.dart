@@ -63,6 +63,7 @@ class ModalComponent {
     TextStyle descriptionStyle,
     TextAlign titileAlign,
     TextAlign descriptionAlign,
+    Color backgroundColor,
   }) {
     showDialog(
         context: context,
@@ -74,6 +75,7 @@ class ModalComponent {
                 content: SingleChildScrollView(
                   child: Container(
                     width: 343,
+                    color: backgroundColor,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,6 +150,7 @@ class ModalComponent {
                 content: SingleChildScrollView(
                   child: Center(
                     child: Container(
+                      color: backgroundColor,
                       width: 343,
                       child: Column(
                         children: <Widget>[
