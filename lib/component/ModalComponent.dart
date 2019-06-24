@@ -61,6 +61,8 @@ class ModalComponent {
     double fontSize,
     TextStyle titleStyle,
     TextStyle descriptionStyle,
+    TextAlign titileAlign,
+    TextAlign descriptionAlign,
   }) {
     showDialog(
         context: context,
@@ -79,7 +81,7 @@ class ModalComponent {
                         title.isNotEmpty
                             ? Text(
                                 title,
-                                textAlign: TextAlign.center,
+                                textAlign: titileAlign,
                                 style: titleStyle ??
                                     TextStyle(
                                         color: Colors.black,
@@ -93,6 +95,7 @@ class ModalComponent {
                         ),
                         Text(
                           description,
+                          textAlign: descriptionAlign,
                           style: descriptionStyle ??
                               TextStyle(
                                   fontFamily: fontFamily,
@@ -158,6 +161,7 @@ class ModalComponent {
                           ),
                           title.isNotEmpty
                               ? Text(title,
+                                  textAlign: titileAlign,
                                   style: titleStyle ??
                                       TextStyle(
                                           color: Colors.black,
@@ -167,6 +171,7 @@ class ModalComponent {
                               : Container(),
                           Text(
                             description,
+                            textAlign: descriptionAlign,
                             style: descriptionStyle ??
                                 TextStyle(
                                     fontFamily: fontFamily,
