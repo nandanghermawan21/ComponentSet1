@@ -45,8 +45,8 @@ class ModalComponent {
 
   static void showAlert(
     BuildContext context, {
-    String mainTitle = 'Confirmation',
-    String secondTile = 'are you sure',
+    String title = '',
+    String description = '',
     Color color = Colors.orange,
     double radius = 5.0,
     bool isConfirm = true,
@@ -59,6 +59,8 @@ class ModalComponent {
     String fontFamily,
     double titleFontSize,
     double fontSize,
+    TextStyle titleStyle,
+    TextStyle descriptionStyle,
   }) {
     showDialog(
         context: context,
@@ -75,21 +77,24 @@ class ModalComponent {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          mainTitle,
+                          title,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontFamily: fontFamily,
-                              fontSize: titleFontSize,
-                              fontWeight: FontWeight.bold),
+                          style: titleStyle ??
+                              TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: fontFamily,
+                                  fontSize: titleFontSize,
+                                  fontWeight: FontWeight.bold),
                         ),
                         Padding(
                           padding: EdgeInsets.all(5),
                         ),
                         Text(
-                          secondTile,
-                          style: TextStyle(
-                              fontFamily: fontFamily, fontSize: titleFontSize),
+                          description,
+                          style: descriptionStyle ??
+                              TextStyle(
+                                  fontFamily: fontFamily,
+                                  fontSize: titleFontSize),
                         ),
                       ],
                     ),
@@ -149,17 +154,19 @@ class ModalComponent {
                           Padding(
                             padding: EdgeInsets.only(top: 5, bottom: 10),
                           ),
-                          Text(mainTitle == '' ? "main titile" : mainTitle,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: fontFamily,
-                                  fontSize: titleFontSize,
-                                  fontWeight: FontWeight.bold)),
+                          Text(title == '' ? "main titile" : title,
+                              style: titleStyle ??
+                                  TextStyle(
+                                      color: Colors.black,
+                                      fontFamily: fontFamily,
+                                      fontSize: titleFontSize,
+                                      fontWeight: FontWeight.bold)),
                           Text(
-                            secondTile == '' ? "second title" : secondTile,
-                            style: TextStyle(
-                                fontFamily: fontFamily,
-                                fontSize: titleFontSize),
+                            description == '' ? "second title" : description,
+                            style: descriptionStyle ??
+                                TextStyle(
+                                    fontFamily: fontFamily,
+                                    fontSize: titleFontSize),
                           ),
                         ],
                       ),
