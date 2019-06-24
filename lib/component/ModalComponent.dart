@@ -42,6 +42,131 @@ class ModalComponent {
       },
     );
   }
+
+  static void showAlert(
+    BuildContext context, {
+    String mainTitle = 'Confirmation',
+    String secondTile = 'are you sure',
+    Color color = Colors.orange,
+    double radius = 5.0,
+    bool isConfirm = true,
+    VoidCallback onConfirm,
+    bool dismisable = true,
+    String confirmText = "Yes",
+    bool cancleButton = false,
+    String cancleText = "No",
+    IconData iconData = Icons.check_circle,
+    String fontFamily,
+    double titleFontSize,
+    double fontSize,
+  }) {
+    showDialog(
+        context: context,
+        barrierDismissible: dismisable,
+        builder: (context) => isConfirm
+            ? AlertDialog(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(radius)),
+                content: SingleChildScrollView(
+                  child: Container(
+                    width: 343,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          mainTitle,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: fontFamily,
+                              fontSize: titleFontSize,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(5),
+                        ),
+                        Text(
+                          secondTile,
+                          style: TextStyle(
+                              fontFamily: fontFamily, fontSize: titleFontSize),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                actions: <Widget>[
+                  cancleButton == true
+                      ? ButtonTheme(
+                          buttonColor: Colors.grey,
+                          minWidth: 100,
+                          height: 48,
+                          child: RaisedButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(5.0)),
+                            child: Text(cancleText,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: fontFamily,
+                                    fontSize: fontSize)),
+                          ),
+                        )
+                      : Container(),
+                  ButtonTheme(
+                    buttonColor: Colors.orange,
+                    minWidth: 100,
+                    height: 48,
+                    child: RaisedButton(
+                      onPressed: onConfirm,
+                      shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(5.0)),
+                      child: Text(confirmText,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: fontFamily,
+                              fontSize: fontSize)),
+                    ),
+                  ),
+                ],
+              )
+            : AlertDialog(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(radius)),
+                content: SingleChildScrollView(
+                  child: Center(
+                    child: Container(
+                      width: 343,
+                      child: Column(
+                        children: <Widget>[
+                          Icon(
+                            iconData,
+                            color: color,
+                            size: 50,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 5, bottom: 10),
+                          ),
+                          Text(mainTitle == '' ? "main titile" : mainTitle,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: fontFamily,
+                                  fontSize: titleFontSize,
+                                  fontWeight: FontWeight.bold)),
+                          Text(
+                            secondTile == '' ? "second title" : secondTile,
+                            style: TextStyle(
+                                fontFamily: fontFamily,
+                                fontSize: titleFontSize),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )));
+  }
 }
 
 class HolcimBetonModal {
