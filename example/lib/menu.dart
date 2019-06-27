@@ -1,8 +1,11 @@
+import 'package:component_set1/component/holcimBeton/DecorationComponent.dart';
+import 'package:component_set1/util/FontUtil.dart';
 import 'package:example/presenter/GrovinSample.dart';
 import 'package:flutter/material.dart';
 import 'package:component_icons/font_awesome.dart';
 import 'package:reorderables/reorderables.dart';
 import 'package:component_set1/util/NavigationUtil.dart';
+import 'package:component_set1/util/ColorUtil.dart';
 
 class Menu extends StatefulWidget {
   @override
@@ -83,12 +86,31 @@ class MenuState extends State<Menu> {
       },
     );
 
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: Text("Component Set 1"),
+    //   ),
+    //   body: Container(child: column(MediaQuery.of(context).size.width, wrap)),
+    // );
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Component Set 1"),
-      ),
-      body: Container(child: column(MediaQuery.of(context).size.width, wrap)),
-    );
+        appBar: AppBar(
+          leading: Icon(
+            Icons.arrow_back,
+            size: FontUtil().lPlus,
+            color: HolcimBetonColor().greenColor,
+          ),
+          title: Text(
+            "Test",
+            style: TextStyle(
+                color: HolcimBetonColor().greenColor,
+                fontSize: FontUtil().lPlus),
+          ),
+          backgroundColor: Color(0xFF565657),
+        ),
+        body: Container(
+          decoration: DecorationComponent.boxDecoration(),
+          child: Container(),
+        ));
   }
 
   void _onReorder(int oldIndex, int newIndex) {
@@ -137,3 +159,5 @@ class MenuState extends State<Menu> {
     );
   }
 }
+
+class FontUtilLocal {}

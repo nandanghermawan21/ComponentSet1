@@ -14,11 +14,9 @@ class DecorationComponent {
         ],
       ),
       image: DecorationImage(
-        image: AssetImage(
-          dark == true
-              ? "assets/backgorundDark.png"
-              : "assets/backgorundLight.png",
-        ),
+        image: AssetImage(dark == true
+            ? "assets/backgorundDark.png"
+            : "assets/backgorundlight.png"),
         fit: BoxFit.fitWidth,
         alignment: Alignment.topCenter,
       ),
