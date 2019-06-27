@@ -8,4 +8,11 @@ class FontUtil {
   double l = 16;
   double xl = 18;
   double xxl = 20;
+
+  double xsPlus = 11;
+  double sPlus = 13;
+  double mPlus = 15;
+  double lPlus = 17;
+  double xlPlus = 19;
+  double xxlPlus = 21;
 }
