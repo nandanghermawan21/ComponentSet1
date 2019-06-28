@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:component_set1/util/ColorUtil.dart';
 
 class DecorationComponent {
-  static BoxDecoration boxDecoration({bool dark = true}) {
+  static BoxDecoration boxDecoration(
+      {bool dark = true,
+      String img = "assets/backgorundDark.png",
+      Alignment aligment = Alignment.topCenter}) {
     return BoxDecoration(
       gradient: LinearGradient(
         begin: Alignment.topCenter,
@@ -14,11 +17,9 @@ class DecorationComponent {
         ],
       ),
       image: DecorationImage(
-        image: AssetImage(dark == true
-            ? "assets/backgorundDark.png"
-            : "assets/backgorundlight.png"),
+        image: AssetImage(img),
         fit: BoxFit.fitWidth,
-        alignment: Alignment.topCenter,
+        alignment: aligment,
       ),
     );
   }
