@@ -15,7 +15,7 @@ class TextStyleUtil {
     return TextStyle(
         color: Colors.white,
         fontFamily: FontUtil().primary,
-        fontSize: 16,
+        fontSize: FontUtil().l,
         fontWeight: FontWeight.normal);
   }
 
