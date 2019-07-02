@@ -9,4 +9,12 @@ class TextStyleUtil {
         fontSize: 28,
         fontWeight: FontWeight.bold);
   }
+
+  static TextStyle inputTitle() {
+    return TextStyle(
+        color: Colors.white,
+        fontFamily: FontUtil().primary,
+        fontSize: 16,
+        fontWeight: FontWeight.normal);
+  }
 }
