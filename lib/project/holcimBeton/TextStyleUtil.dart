@@ -11,11 +11,13 @@ class TextStyleUtil {
         fontWeight: FontWeight.bold);
   }
 
-  static TextStyle inputTitle() {
+  static TextStyle inputTitle({
+    double fontSize
+  }) {
     return TextStyle(
         color: Colors.white,
         fontFamily: FontUtil().primary,
-        fontSize: FontUtil().l,
+        fontSize: fontSize ?? FontUtil().l,
         fontWeight: FontWeight.normal);
   }
 
