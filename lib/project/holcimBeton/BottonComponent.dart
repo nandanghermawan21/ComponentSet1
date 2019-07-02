@@ -11,7 +11,9 @@ class BottonComponent {
     /// design botton utama
     /// bentuk bottonnya transparan dengan border berwarna hijau neon (memiliki shadow)
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        onTap();
+      },
       child: Container(
         width: double.infinity,
         height: 50,
@@ -27,17 +29,12 @@ class BottonComponent {
             borderRadius: BorderRadius.all(Radius.circular(5)),
             border: Border.all(width: 3, color: ColorUtil().greenColor)),
         child: Center(
-          child: GestureDetector(
-            onTap: () {
-              onTap();
-            },
-            child: Text(
-              "$text",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: FontUtil().primary,
-                  fontSize: FontUtil().l),
-            ),
+          child: Text(
+            "$text",
+            style: TextStyle(
+                color: Colors.white,
+                fontFamily: FontUtil().primary,
+                fontSize: FontUtil().l),
           ),
         ),
       ),
