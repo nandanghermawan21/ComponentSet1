@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 
 class InputComponent {
@@ -28,7 +29,8 @@ class InputComponent {
       TextAlign textAlign = TextAlign.left,
       bool readOnly = false,
       int maxLines,
-      Color backgroundColor}) {
+      Color backgroundColor,
+      EdgeInsetsGeometry contentPadding}) {
     return TextField(
       maxLines: maxLines,
       enabled: readOnly == true ? false : true,
@@ -48,6 +50,7 @@ class InputComponent {
       controller: controller,
       textAlign: textAlign,
       decoration: new InputDecoration(
+          contentPadding: contentPadding,
           border: new OutlineInputBorder(
             borderSide: new BorderSide(
                 color: stateInput == StateInput.Error
