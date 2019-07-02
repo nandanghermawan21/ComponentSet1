@@ -3,6 +3,8 @@ import 'package:component_set1/project/holcimBeton/ColorUtil.dart';
 import 'package:component_set1/project/holcimBeton/FontUtil.dart';
 import 'package:flutter/material.dart';
 
+import 'TextStyleUtil.dart';
+
 class BottonComponent {
   static GestureDetector mainBotton(
       {@required String text, @required VoidCallback onTap}) {
@@ -37,6 +39,31 @@ class BottonComponent {
                   fontSize: FontUtil().l),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  static AppBar backButtonAppBar({
+    @required BuildContext context,
+    @required String text,
+    VoidCallback onBack,
+  }) {
+    return AppBar(
+      centerTitle: false,
+      title: Text(
+        "$text",
+        style: TextStyleUtil.linkLabel(fontSize: FontUtil().lPlus),
+      ),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      leading: GestureDetector(
+        onTap: () {
+          onBack != null ? onBack() : Navigator.of(context).pop();
+        },
+        child: Icon(
+          Icons.arrow_back,
+          color: ColorUtil().mainColor,
         ),
       ),
     );

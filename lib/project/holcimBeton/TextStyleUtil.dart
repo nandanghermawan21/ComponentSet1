@@ -23,8 +23,10 @@ class TextStyleUtil {
     return TextStyle(color: Colors.white, fontSize: FontUtil().l);
   }
 
-  static TextStyle linkLabel() {
-    return TextStyle(color: ColorUtil().mainColor, fontSize: FontUtil().l);
+  static TextStyle linkLabel({
+    double fontSize,
+  }) {
+    return TextStyle(
+        color: ColorUtil().mainColor, fontSize: fontSize ?? FontUtil().l);
   }
-
 }
