@@ -7,7 +7,7 @@ class TextStyleUtil {
     return TextStyle(
         color: Colors.white,
         fontFamily: FontUtil().primary,
-        fontSize: FontUtil().xl,
+        fontSize: FontUtil().xxxl,
         fontWeight: FontWeight.bold);
   }
 
