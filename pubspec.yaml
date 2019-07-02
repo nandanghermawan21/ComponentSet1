@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   overlay_support: ^0.1.0
+  flutter_svg: ^0.10.3
   reorderables: ^0.2.9
   component_icons:
     git:
