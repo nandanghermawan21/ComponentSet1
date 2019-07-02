@@ -1,6 +1,6 @@
-import '../../util/FontUtil.dart';
+import '../../util/FontUtil.dart' as fontUtilBase;
 
-class FontUtilLocal extends FontUtil {
+class FontUtil extends fontUtilBase.FontUtil {
   String primary = "Exo";
 
   String scondary = "SF-Pro-Display";
