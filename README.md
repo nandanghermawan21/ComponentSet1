@@ -19,8 +19,10 @@ samples, guidance on mobile development, and a full API reference.
 adalah kumpulan komponen modular yang dapat digunakan langsung kedalam view pada aplikasi
 termuat didalamnya settingan setingan untuk modififikasi dan penyesuaian dengan komponen yang dibuat
 
-##holcim beton
+#project
 
-adalah kumpulan komponen modular yang dibuat khusus untuk kebutuhan develope aplikai mobile
-holcim beton. hal ini dilatarbelakangi oleh kemiripan seluruh desain mobile app holcim beton
-baik itu mobule_custome, mobile_driver, mobile_sales dan mobile_qc
+adalah kumpulan kode terpusat yang dibuat khusus untuk suatu project tertentu
+
+##holcimBeton
+
+adalah project holcim beton mobile yang terdiri dari aplikasi mobile_customer, mobile_sales, mobile_driver dan mobile_qc

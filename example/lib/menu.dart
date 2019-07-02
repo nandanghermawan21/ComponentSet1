@@ -1,4 +1,4 @@
-import 'package:component_set1/component/holcimBeton/DecorationComponent.dart';
+import 'package:component_set1/project/holcimBeton/DecorationComponent.dart';
 import 'package:component_set1/util/FontUtil.dart';
 import 'package:example/presenter/GrovinSample.dart';
 import 'package:flutter/material.dart';
