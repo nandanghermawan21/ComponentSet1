@@ -3,7 +3,7 @@ import 'package:component_set1/project/holcimBeton/ColorUtil.dart';
 import 'package:component_set1/project/holcimBeton/FontUtil.dart';
 import 'package:flutter/material.dart';
 
-class BottonComponen {
+class BottonComponent {
   static GestureDetector mainBotton(
       {@required String text, @required VoidCallback onTap}) {
     /// design botton utama
@@ -30,7 +30,7 @@ class BottonComponen {
               onTap();
             },
             child: Text(
-              "text",
+              "$text",
               style: TextStyle(
                   color: Colors.white,
                   fontFamily: FontUtil().primary,
