@@ -68,7 +68,7 @@ class View extends PresenterState {
                   ),
                   Align(
                       alignment: Alignment.topRight,
-                      child: intBedge == 0
+                      child: intBedge == 0 || intBedge == null
                           ? Container()
                           : Container(
                               margin: EdgeInsets.only(right: 10, top: 6),
