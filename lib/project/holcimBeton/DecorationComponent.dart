@@ -1,3 +1,6 @@
+import 'package:component_set1/component/DecorationComponent.dart'
+    as decorationBase;
+import 'package:component_set1/project/holcimBeton/ColorUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:component_set1/util/ColorUtil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,9 +37,16 @@ class DecorationComponent {
         padding: EdgeInsets.fromLTRB(14, 7, 14, 7),
         margin: EdgeInsets.only(top: 60, left: 20),
         decoration: BoxDecoration(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.all(Radius.circular(15)),
-            border: Border.all(width: 3, color: HolcimBetonColor().greenColor)),
+          color: Colors.transparent,
+          borderRadius: BorderRadius.all(Radius.circular(15)),
+          border: Border.all(width: 3, color: HolcimBetonColor().greenColor),
+          boxShadow: [
+            decorationBase.CustomBoxShadow(
+                color: ColorUtil().greenColor,
+                blurRadius: 6.0,
+                blurStyle: BlurStyle.outer),
+          ],
+        ),
         child: SvgPicture.string(
           sbbiLogo,
           allowDrawingOutsideViewBox: true,

@@ -1,3 +1,4 @@
+import 'package:component_icons/font_awesome.dart';
 import 'package:component_set1/component/DecorationComponent.dart';
 import 'package:component_set1/project/holcimBeton/ColorUtil.dart';
 import 'package:component_set1/project/holcimBeton/FontUtil.dart';
@@ -32,6 +33,7 @@ class BottonComponent {
           child: Text(
             "$text",
             style: TextStyle(
+                fontWeight: FontWeight.bold,
                 color: Colors.white,
                 fontFamily: FontUtil().primary,
                 fontSize: FontUtil().l),
@@ -41,28 +43,73 @@ class BottonComponent {
     );
   }
 
-  static AppBar backButtonAppBar({
+  /// custom app bar dengan komposisi
+  /// dibagian kiri ada tombol back dengan icon arrow dengan action tap [onBack]
+  /// disebelahnya tombol tersebut ada [actionText] yang dapat di ganti
+  /// ditengahnya ada text [title] halaman dan
+  /// dikanannya ada [rightWidget]
+  static AppBar customAppBar1({
     @required BuildContext context,
-    @required String text,
+    @required String actionText,
+    String title,
+    Widget rightWidget,
     VoidCallback onBack,
   }) {
     return AppBar(
       centerTitle: false,
-      title: Text(
-        "$text",
-        style: TextStyleUtil.linkLabel(fontSize: FontUtil().lPlus),
+      title: Stack(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Container(
+                width: 40,
+                padding: EdgeInsets.all(0),
+                margin: EdgeInsets.all(0),
+                child: GestureDetector(
+                  onTap: () {
+                    onBack ?? Navigator.of(context).pop();
+                  },
+                  child: Center(
+                    child: Icon(
+                      FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
+                      size: 18,
+                      color: ColorUtil().mainColor,
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "$actionText",
+                      style: TextStyleUtil.linkLabel(fontSize: 17),
+                    ),
+                    Container(
+                      child: rightWidget ?? Container(),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Center(
+            child: Text(
+              "$title",
+              style: TextStyle(
+                  color: ColorUtil().mainColor,
+                  fontFamily: FontUtil().primary,
+                  fontSize: FontUtil().xxl,
+                  fontWeight: FontWeight.bold),
+            ),
+          )
+        ],
       ),
+      automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
-      elevation: 0,
-      leading: GestureDetector(
-        onTap: () {
-          onBack != null ? onBack() : Navigator.of(context).pop();
-        },
-        child: Icon(
-          Icons.arrow_back,
-          color: ColorUtil().mainColor,
-        ),
-      ),
+      elevation: 1,
     );
   }
 }
