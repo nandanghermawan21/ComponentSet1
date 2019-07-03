@@ -11,9 +11,7 @@ class TextStyleUtil {
         fontWeight: FontWeight.bold);
   }
 
-  static TextStyle inputTitle({
-    double fontSize
-  }) {
+  static TextStyle inputTitle({double fontSize}) {
     return TextStyle(
         color: Colors.white,
         fontFamily: FontUtil().primary,
@@ -21,9 +19,7 @@ class TextStyleUtil {
         fontWeight: FontWeight.normal);
   }
 
-  static TextStyle mainLabel({
-    double fontSize
-  }) {
+  static TextStyle mainLabel({double fontSize}) {
     return TextStyle(color: Colors.white, fontSize: fontSize ?? FontUtil().l);
   }
 
@@ -32,5 +28,32 @@ class TextStyleUtil {
   }) {
     return TextStyle(
         color: ColorUtil().mainColor, fontSize: fontSize ?? FontUtil().l);
+  }
+
+  static TextStyle titleTable({
+    double fontSize,
+  }) {
+    return TextStyle(
+        color: Colors.white,
+        fontSize: fontSize ?? FontUtil().m,
+        fontWeight: FontWeight.w600);
+  }
+
+  static TextStyle headerTable({
+    double fontSize,
+  }) {
+    return TextStyle(
+      color: ColorUtil().mainColor,
+      fontSize: fontSize ?? FontUtil().s,
+    );
+  }
+
+  static TextStyle valueTable({
+    double fontSize,
+  }) {
+    return TextStyle(
+      color: Colors.white,
+      fontSize: fontSize ?? FontUtil().m,
+    );
   }
 }
