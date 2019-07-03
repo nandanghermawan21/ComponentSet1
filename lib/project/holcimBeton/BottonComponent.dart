@@ -51,7 +51,7 @@ class BottonComponent {
   static AppBar customAppBar1({
     @required BuildContext context,
     @required String actionText,
-    String title,
+    String title = "",
     Widget rightWidget,
     VoidCallback onBack,
   }) {
