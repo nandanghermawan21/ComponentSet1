@@ -48,12 +48,14 @@ class BottonComponent {
   /// disebelahnya tombol tersebut ada [actionText] yang dapat di ganti
   /// ditengahnya ada text [title] halaman dan
   /// dikanannya ada [rightWidget]
+  /// masukan elevation 0 untuk appbar transparant
   static AppBar customAppBar1({
     @required BuildContext context,
     @required String actionText,
     String title = "",
     Widget rightWidget,
     VoidCallback onBack,
+    double elevetion = 1
   }) {
     return AppBar(
       centerTitle: false,
@@ -109,7 +111,7 @@ class BottonComponent {
       ),
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
-      elevation: 1,
+      elevation: elevetion,
     );
   }
 }
