@@ -49,14 +49,13 @@ class BottonComponent {
   /// ditengahnya ada text [title] halaman dan
   /// dikanannya ada [rightWidget]
   /// masukan elevation 0 untuk appbar transparant
-  static AppBar customAppBar1({
-    @required BuildContext context,
-    @required String actionText,
-    String title = "",
-    Widget rightWidget,
-    VoidCallback onBack,
-    double elevetion = 1
-  }) {
+  static AppBar customAppBar1(
+      {@required BuildContext context,
+      @required String actionText,
+      String title = "",
+      Widget rightWidget,
+      VoidCallback onBack,
+      double elevetion = 1}) {
     return AppBar(
       centerTitle: false,
       title: Stack(
@@ -74,7 +73,7 @@ class BottonComponent {
                   child: Center(
                     child: Icon(
                       FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
-                      size: 18,
+                      size: FontUtil().lPlus,
                       color: ColorUtil().mainColor,
                     ),
                   ),
@@ -87,7 +86,8 @@ class BottonComponent {
                   children: <Widget>[
                     Text(
                       "$actionText",
-                      style: TextStyleUtil.linkLabel(fontSize: 17),
+                      style:
+                          TextStyleUtil.linkLabel(fontSize: FontUtil().lPlus),
                     ),
                     Container(
                       child: rightWidget ?? Container(),
@@ -103,7 +103,7 @@ class BottonComponent {
               style: TextStyle(
                   color: ColorUtil().mainColor,
                   fontFamily: FontUtil().primary,
-                  fontSize: FontUtil().xxl,
+                  fontSize: FontUtil().lPlus,
                   fontWeight: FontWeight.bold),
             ),
           )
