@@ -128,7 +128,7 @@ class View extends PresenterState {
     }
 
     return Container(
-      margin: EdgeInsets.only(bottom: 40, left: 20, right: 20),
+      margin: EdgeInsets.only(bottom: 40, left: 15, right: 15),
       padding: EdgeInsets.all(0),
       width: widget.width,
       height: widget.heigth,
