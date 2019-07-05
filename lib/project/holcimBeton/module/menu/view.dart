@@ -143,7 +143,8 @@ class View extends PresenterState {
           ),
         ],
       ),
-      child: ListView(padding: EdgeInsets.only(top: 5), children: <Widget>[
+      child: ListView(
+        padding: EdgeInsets.only(top: 0), children: <Widget>[
         mainMenu(),
       ]),
     );
