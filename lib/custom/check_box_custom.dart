@@ -318,7 +318,6 @@ class _RenderCheckbox extends RenderToggleable {
       path.lineTo(origin.dx + mid.dx, origin.dy + mid.dy);
       path.lineTo(origin.dx + drawEnd.dx, origin.dy + drawEnd.dy);
     }
-    paint..color = Colors.yellow;
     canvas.drawPath(path, paint);
   }
 
