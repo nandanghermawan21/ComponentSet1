@@ -7,6 +7,7 @@ import 'dart:math' as math;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
+import 'package:flutter/src/material/colors.dart';
 import 'package:flutter/src/material/constants.dart';
 import 'package:flutter/src/material/debug.dart';
 import 'package:flutter/src/material/theme.dart';
@@ -346,7 +347,7 @@ class _RenderCheckbox extends RenderToggleable {
     if (_oldValue == false || value == false) {
       final double t = value == false ? 1.0 - tNormalized : tNormalized;
       final RRect outer = _outerRectAt(origin, t);
-      final Paint paint = Paint()..color = Color(0xFFffffff);
+      final Paint paint = Paint()..color = Colors.red;
 
       if (t <= 0.5) {
         _drawBorder(canvas, outer, t, paint);
