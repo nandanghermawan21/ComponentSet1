@@ -25,7 +25,7 @@ class View extends PresenterState {
         double sizeTextMenu = 12,
         String fontTextFamily}) {
       return Container(
-          margin: EdgeInsets.only(left: 5, right: 5, bottom: 5),
+          margin: EdgeInsets.only(left: 2, right: 2, bottom: 2),
           width: sizeMenuButton,
           height: sizeMenuButton,
           decoration: BoxDecoration(
@@ -128,7 +128,7 @@ class View extends PresenterState {
     }
 
     return Container(
-      margin: EdgeInsets.only(bottom: 40, left: 20, right: 20),
+      margin: EdgeInsets.only(bottom: 40, left: 15, right: 15),
       padding: EdgeInsets.all(0),
       width: widget.width,
       height: widget.heigth,
@@ -143,7 +143,7 @@ class View extends PresenterState {
           ),
         ],
       ),
-      child: ListView(padding: EdgeInsets.only(top: 10), children: <Widget>[
+      child: ListView(padding: EdgeInsets.only(top: 0), children: <Widget>[
         mainMenu(),
       ]),
     );
