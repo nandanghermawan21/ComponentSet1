@@ -6,10 +6,10 @@ class HolcimBetonColor {
   Color mainColor = Color(0xFFA8C700);
   Color yellowColor = Color(0xFFFFB426);
   // Color greenColor = Color(0xFF3CD58E);
-  Color redColor = Color(0xFFFF5966);
+  Color redColor = Color(0xFFE84646);
   Color scafoldColor = Color(0xFF565657);
   Color inputTextBackground = Color(0xFFF7F7F7);
-  Color yellow = Color(0xFFFFC61C);
+  Color yellow = Color(0xFFFFA700);
   Color green = Color(0xFFA8C700);
 
   Color greenColor = Color(0xFFA8C700);
