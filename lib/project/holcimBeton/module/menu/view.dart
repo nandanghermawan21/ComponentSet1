@@ -25,7 +25,7 @@ class View extends PresenterState {
         double sizeTextMenu = 12,
         String fontTextFamily}) {
       return Container(
-          margin: EdgeInsets.only(left: 5, right: 5, bottom: 5),
+          margin: EdgeInsets.only(left: 2, right: 2, bottom: 2),
           width: sizeMenuButton,
           height: sizeMenuButton,
           decoration: BoxDecoration(
