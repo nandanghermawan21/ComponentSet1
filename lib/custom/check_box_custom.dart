@@ -350,7 +350,7 @@ class _RenderCheckbox extends RenderToggleable {
     if (_oldValue == false || value == false) {
       final double t = value == false ? 1.0 - tNormalized : tNormalized;
       final RRect outer = _outerRectAt(origin, t);
-      final Paint paint = Paint()..color = Colors.red;
+      final Paint paint = Paint()..color = _colorAt(1.0);
 
       if (t <= 0.5) {
         _drawBorder(canvas, outer, t, paint);
