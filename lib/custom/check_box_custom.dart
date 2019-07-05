@@ -294,6 +294,7 @@ class _RenderCheckbox extends RenderToggleable {
     final double size = outer.width;
     // As t goes from 0.0 to 1.0, gradually fill the outer RRect.
     final RRect inner = outer.deflate(math.min(size / 2.0, _kStrokeWidth + size * t));
+    paint..color = Colors.yellow;
     canvas.drawDRRect(outer, inner, paint);
   }
 
@@ -317,6 +318,7 @@ class _RenderCheckbox extends RenderToggleable {
       path.lineTo(origin.dx + mid.dx, origin.dy + mid.dy);
       path.lineTo(origin.dx + drawEnd.dx, origin.dy + drawEnd.dy);
     }
+    paint..color = Colors.yellow;
     canvas.drawPath(path, paint);
   }
 
@@ -329,11 +331,12 @@ class _RenderCheckbox extends RenderToggleable {
     const Offset end = Offset(_kEdgeSize * 0.8, _kEdgeSize * 0.5);
     final Offset drawStart = Offset.lerp(start, mid, 1.0 - t);
     final Offset drawEnd = Offset.lerp(mid, end, t);
+    paint..color = Colors.yellow;
     canvas.drawLine(origin + drawStart, origin + drawEnd, paint);
   }
 
-  @override
-  void paint(PaintingContext context, Offset offset) {
+ 
+  void paint(PaintingContext context, Offset offset,) {
     final Canvas canvas = context.canvas;
     paintRadialReaction(canvas, offset, size.center(Offset.zero));
 
@@ -363,7 +366,7 @@ class _RenderCheckbox extends RenderToggleable {
       }
     } else { // Two cases: null to true, true to null
       final RRect outer = _outerRectAt(origin, 1.0);
-      final Paint paint = Paint() ..color = _colorAt(1.0);
+      final Paint   paint = Paint() ..color = _colorAt(1.0);
       canvas.drawRRect(outer, paint);
 
       _initStrokePaint(paint);
