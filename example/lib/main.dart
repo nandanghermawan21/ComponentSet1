@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'menu.dart';
+import 'module/home/main.dart' as home;
 
 void main() {
   runApp(MaterialApp(
-    title: 'holcim Sales',
-    theme: ThemeData(
-      canvasColor: Colors.white
+    title: 'Component Set',
+    theme: ThemeData(canvasColor: Colors.white),
+    home: home.Presenter(
+      title: "Component Set 1",
+      menus: home.Menu.componentSetGlobal(),
     ),
-    home: Menu(),
   ));
 }
