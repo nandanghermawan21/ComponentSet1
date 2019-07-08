@@ -60,6 +60,16 @@ class BottonComponent {
       centerTitle: false,
       title: Stack(
         children: <Widget>[
+          Center(
+            child: Text(
+              "$title",
+              style: TextStyle(
+                  color: ColorUtil().mainColor,
+                  fontFamily: FontUtil().primary,
+                  fontSize: FontUtil().lPlus,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
           Row(
             children: <Widget>[
               Container(
@@ -84,10 +94,15 @@ class BottonComponent {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      "$actionText",
-                      style:
-                          TextStyleUtil.linkLabel(fontSize: FontUtil().lPlus),
+                    GestureDetector(
+                      onTap: () {
+                        onBack ?? Navigator.of(context).pop();
+                      },
+                      child: Text(
+                        "$actionText",
+                        style:
+                            TextStyleUtil.linkLabel(fontSize: FontUtil().lPlus),
+                      ),
                     ),
                     Container(
                       child: rightWidget ?? Container(),
@@ -96,16 +111,6 @@ class BottonComponent {
                 ),
               ),
             ],
-          ),
-          Center(
-            child: Text(
-              "$title",
-              style: TextStyle(
-                  color: ColorUtil().mainColor,
-                  fontFamily: FontUtil().primary,
-                  fontSize: FontUtil().lPlus,
-                  fontWeight: FontWeight.bold),
-            ),
           )
         ],
       ),
