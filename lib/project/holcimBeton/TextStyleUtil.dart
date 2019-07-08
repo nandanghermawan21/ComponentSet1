@@ -56,4 +56,15 @@ class TextStyleUtil {
       fontSize: fontSize ?? FontUtil().m,
     );
   }
+
+  static TextStyle listTileTitle() {
+    return TextStyle(
+        fontWeight: FontWeight.bold,
+        color: ColorUtil().mainColor,
+        fontSize: FontUtil().m);
+  }
+
+  static TextStyle listTileSUbtitile() {
+    return TextStyle(fontSize: FontUtil().l, color: Colors.white);
+  }
 }
