@@ -8,7 +8,11 @@ import 'TextStyleUtil.dart';
 
 class BottonComponent {
   static GestureDetector mainBotton(
-      {@required String text, @required VoidCallback onTap}) {
+      {@required String text,
+       @required VoidCallback onTap,
+       @required double fontSize,
+       @required FontWeight fontWeight,
+       }) {
     /// design botton utama
     /// bentuk bottonnya transparan dengan border berwarna hijau neon (memiliki shadow)
     return GestureDetector(
@@ -33,10 +37,10 @@ class BottonComponent {
           child: Text(
             "$text",
             style: TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: fontWeight ?? FontWeight.bold,
                 color: Colors.white,
                 fontFamily: FontUtil().primary,
-                fontSize: FontUtil().l),
+                fontSize: fontSize ?? FontUtil().l),
           ),
         ),
       ),
