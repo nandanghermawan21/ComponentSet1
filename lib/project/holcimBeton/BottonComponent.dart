@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 import 'TextStyleUtil.dart';
 
 class BottonComponent {
-  static GestureDetector mainBotton(
-      {@required String text,
-       @required VoidCallback onTap,
-       @required double fontSize,
-       @required FontWeight fontWeight,
-       }) {
+  static GestureDetector mainBotton({
+    @required String text,
+    @required VoidCallback onTap,
+    double fontSize,
+    FontWeight fontWeight,
+  }) {
     /// design botton utama
     /// bentuk bottonnya transparan dengan border berwarna hijau neon (memiliki shadow)
     return GestureDetector(
