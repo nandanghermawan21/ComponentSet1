@@ -58,7 +58,7 @@ export 'package:flutter/src/material/flat_button.dart';
 export 'package:flutter/src/material/flexible_space_bar.dart';
 export 'package:flutter/src/material/floating_action_button.dart';
 export 'package:flutter/src/material/floating_action_button_location.dart';
-export 'package:flutter/src/material/floating_action_button_theme.dart';
+// export 'package:flutter/src/material/floating_action_button_theme.dart';
 export 'package:flutter/src/material/flutter_logo.dart';
 export 'package:flutter/src/material/grid_tile.dart';
 export 'package:flutter/src/material/grid_tile_bar.dart';
