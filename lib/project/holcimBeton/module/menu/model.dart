@@ -5,6 +5,7 @@ class HolcimBetonMenuModel {
   VoidCallback onTap;
   IconData icon;
   int intBadge;
+  EdgeInsets iconMargin;
 
-  HolcimBetonMenuModel({this.textMenu, this.onTap, this.icon, this.intBadge});
+  HolcimBetonMenuModel({this.textMenu, this.onTap, this.icon, this.intBadge, this.iconMargin = const EdgeInsets.all(0)});
 }

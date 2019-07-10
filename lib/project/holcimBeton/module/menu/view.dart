@@ -16,6 +16,7 @@ class View extends PresenterState {
         IconData iconMenu = const FontAwesomeRegular(FontAwesomeId.fa_bell),
         Color colorIcon = const Color(0xff5555BF),
         double sizeIcon = 20.2,
+        EdgeInsets iconMargin = const EdgeInsets.all(0),
         Color colorBedge = const Color(0xffFF9500),
         int intBedge = 0,
         Color colorTextBedge = Colors.white,
@@ -58,10 +59,13 @@ class View extends PresenterState {
                             width: 3,
                           )),
                       child: Center(
-                        child: Icon(
-                          iconMenu,
-                          color: Colors.white,
-                          size: sizeIcon,
+                        child: Padding(
+                          padding: iconMargin,
+                          child: Icon(
+                            iconMenu,
+                            color: Colors.white,
+                            size: sizeIcon,
+                          ),
                         ),
                       ),
                     ),
@@ -120,6 +124,7 @@ class View extends PresenterState {
                 onTap: widget.menus[index].onTap,
                 iconMenu: widget.menus[index].icon,
                 intBedge: widget.menus[index].intBadge,
+                iconMargin: widget.menus[index].iconMargin,
               );
             }),
           ),
