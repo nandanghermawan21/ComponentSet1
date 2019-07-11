@@ -19,6 +19,13 @@ dependencies:
   groovin_widgets:
     git:
       url: https://github.com/nandanghermawan21/GroovinWidgets.git
+  flutter_google_places:
+    git:
+      url: https://github.com/nandanghermawan21/flutter_google_places.git
+  google_maps_flutter: ^0.5.11+1
+  location: ^2.3.5
+  geolocator: ^4.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
