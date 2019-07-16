@@ -40,6 +40,29 @@ insert repositori ini kedalah file yaml project
 ```
 
 
+buka dan ubah file ios/runner/podfile menjadi seperti ini dimulai dari baris 35
+
+```java
+target 'Runner' do
+  use_frameworks!  # required by Geolocator
+  # Prepare symlinks folder. We use symlinks to avoid having Podfile.lock
+  # referring to absolute paths on developers' machines.
+  system('rm -rf .symlinks')
+  system('mkdir -p .symlinks/plugins')
+
+  # Flutter Pods
+  generated_xcode_build_settings = parse_KV_file('./Flutter/Generated.xcconfig')
+  if generated_xcode_build_settings.empty?
+    puts "Generated.xcconfig must exist. If you're running pod install manually, make sure flutter pub get is executed first."
+  end
+  generated_xcode_build_settings.map { |p|
+    if p[:name] == 'FLUTTER_FRAMEWORK_DIR'
+      symlink = File.join('.symlinks', 'flutter')
+      File.symlink(File.dirname(p[:path]), symlink)
+      pod 'Flutter', :path => File.join(symlink, File.basename(p[:path]))
+    end
+  }
+```
 
 ## Test komponent
 
