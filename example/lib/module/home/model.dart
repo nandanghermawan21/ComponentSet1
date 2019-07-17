@@ -4,6 +4,7 @@ import '../radioButton/main.dart' as radioBotton;
 import '../project/holcimBeton/menu/main.dart' as holcimBetonMenu;
 import 'package:component_set1/project/holcimBeton/module/location/main.dart'
     as holcimBetonLocation;
+import '../inputComponent/main.dart' as inputComponent;
 
 class Menu {
   PeojectName project;
@@ -60,6 +61,12 @@ class Menu {
           backText: "Back",
         ),
       ),
+      Menu(
+          project: PeojectName.general,
+          title: "Global Input Component",
+          description: "jenis jenis input component",
+          icon: Icons.add_box,
+          widget: inputComponent.Presenter()),
     ];
   }
 }
