@@ -261,7 +261,7 @@ class InputComponent {
                                 height: height * 3 / 4,
                                 width: height * 3 / 4,
                                 color: Colors.transparent,
-                                margin: EdgeInsets.only(right: 8, bottom: 5),
+                                margin: EdgeInsets.only(right: 10, bottom: 5),
                                 child: Align(
                                   alignment: Alignment.bottomCenter,
                                   child: Icon(
