@@ -222,8 +222,8 @@ class InputComponent {
                           obscureText: obscureText,
                           decoration: InputDecoration(
                             hintText: "$hintText",
-                            hintStyle: TextStyle(
-                              color: hintTextStyle ?? hintTextColor ??
+                            hintStyle: hintTextStyle ?? TextStyle(
+                              color:  hintTextColor ??
                                   Colors.black.withOpacity(0.3),
                             ),
                             contentPadding: EdgeInsets.only(
