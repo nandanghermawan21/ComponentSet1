@@ -210,7 +210,7 @@ class InputComponent {
                 child: Stack(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 8),
+                      padding: const EdgeInsets.only(left: 10, right: 10),
                       child: Align(
                         alignment: Alignment.bottomCenter,
                         child: TextField(
