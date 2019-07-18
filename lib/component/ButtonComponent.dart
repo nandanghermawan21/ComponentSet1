@@ -60,16 +60,19 @@ class ButtonComponent {
       Border border,
       TextStyle textstyle,
       Widget child,
-      VoidCallback onPressed}) {
+      VoidCallback onPressed,
+      List<BoxShadow> boxShadow}) {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
         width: width,
         height: height,
         decoration: new BoxDecoration(
-            border: border,
-            color: colorBackground,
-            borderRadius: BorderRadius.all(Radius.circular(radius))),
+          border: border,
+          color: colorBackground,
+          borderRadius: BorderRadius.all(Radius.circular(radius)),
+          boxShadow: boxShadow,
+        ),
         child: Center(
           child: child != null
               ? child
