@@ -210,22 +210,26 @@ class InputComponent {
                 child: Stack(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      padding: EdgeInsets.only(
+                          left: leadingIcon == null ? 0 : 10,
+                          right: trailingIcon == null ? 0 : 10),
                       child: Align(
                         alignment: Alignment.bottomCenter,
                         child: TextField(
                           controller: controller,
-                          style: textStyle ?? TextStyle(
-                            color: textColor,
-                            // fontFamily: FontUtil.primary,
-                          ),
+                          style: textStyle ??
+                              TextStyle(
+                                color: textColor,
+                                // fontFamily: FontUtil.primary,
+                              ),
                           obscureText: obscureText,
                           decoration: InputDecoration(
                             hintText: "$hintText",
-                            hintStyle: hintTextStyle ?? TextStyle(
-                              color:  hintTextColor ??
-                                  Colors.black.withOpacity(0.3),
-                            ),
+                            hintStyle: hintTextStyle ??
+                                TextStyle(
+                                  color: hintTextColor ??
+                                      Colors.black.withOpacity(0.3),
+                                ),
                             contentPadding: EdgeInsets.only(
                                 bottom: 3,
                                 right: suffix != null ? height * 3 / 4 : 0),
