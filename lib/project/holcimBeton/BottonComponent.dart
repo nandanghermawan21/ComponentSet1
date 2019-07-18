@@ -59,7 +59,14 @@ class BottonComponent {
       String title = "",
       Widget rightWidget,
       VoidCallback onBack,
-      double elevetion = 1}) {
+      double elevetion = 1,
+      Color backgroundColor,
+      Color titleColor,
+      TextStyle titleStyle,
+      Color backButtonColor,
+      Color actionTextColor,
+      TextStyle actionTextStyle
+      }) {
     return AppBar(
       centerTitle: false,
       title: Stack(
@@ -67,8 +74,8 @@ class BottonComponent {
           Center(
             child: Text(
               "$title",
-              style: TextStyle(
-                  color: ColorUtil().mainColor,
+              style: titleStyle ?? TextStyle(
+                  color: titleColor ?? ColorUtil().mainColor,
                   fontFamily: FontUtil().primary,
                   fontSize: FontUtil().lPlus,
                   fontWeight: FontWeight.bold),
@@ -88,7 +95,7 @@ class BottonComponent {
                     child: Icon(
                       FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
                       size: FontUtil().lPlus,
-                      color: ColorUtil().mainColor,
+                      color: backButtonColor ?? ColorUtil().mainColor,
                     ),
                   ),
                 ),
@@ -104,8 +111,8 @@ class BottonComponent {
                       },
                       child: Text(
                         "$actionText",
-                        style:
-                            TextStyleUtil.linkLabel(fontSize: FontUtil().lPlus),
+                        style: actionTextStyle ??
+                            TextStyleUtil.linkLabel(fontSize: FontUtil().lPlus, color: actionTextColor),
                       ),
                     ),
                     Container(
@@ -119,7 +126,7 @@ class BottonComponent {
         ],
       ),
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.transparent,
+      backgroundColor: backgroundColor ?? Colors.transparent,
       elevation: elevetion,
     );
   }

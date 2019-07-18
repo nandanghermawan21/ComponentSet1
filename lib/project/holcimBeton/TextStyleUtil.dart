@@ -23,9 +23,9 @@ class TextStyleUtil {
     return TextStyle(color: Colors.white, fontSize: fontSize ?? FontUtil().l, fontWeight: fontWeight ?? FontWeight.normal);
   }
 
-  static TextStyle linkLabel({double fontSize, FontWeight fontWeight}) {
+  static TextStyle linkLabel({double fontSize, FontWeight fontWeight, Color color}) {
     return TextStyle(
-        color: ColorUtil().mainColor,
+        color: color ?? ColorUtil().mainColor,
         fontSize: fontSize ?? FontUtil().l,
         fontWeight: fontWeight ?? FontWeight.normal);
   }
