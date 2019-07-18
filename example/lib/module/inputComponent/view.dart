@@ -24,6 +24,17 @@ class View extends PresenterState {
                 suffix: Icons.accessible,
                 hintText: "sample",
               )),
+          componentBox(
+              title: "dateTimePicker",
+              component: InputComponent.inputTextWithCorner(
+                controller: dateController,
+                corner: 5,
+                hintText: "sample",
+                suffixIcon: Icon(Icons.calendar_today),
+                onTap: (){
+                  selectDate(context);
+                }
+              )),
         ],
       )),
     );
