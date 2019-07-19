@@ -183,7 +183,7 @@ class InputComponent {
     IconData trailingIcon,
     VoidCallback onTapTrailingIcon,
     Color trailingIconColor,
-    bool readOnly,
+    bool readOnly = false,
   }) {
     return Container(
       width: double.infinity,
