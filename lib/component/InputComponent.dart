@@ -183,6 +183,7 @@ class InputComponent {
     IconData trailingIcon,
     VoidCallback onTapTrailingIcon,
     Color trailingIconColor,
+    bool readOnly,
   }) {
     return Container(
       width: double.infinity,
@@ -217,6 +218,7 @@ class InputComponent {
                         alignment: Alignment.bottomCenter,
                         child: TextField(
                           controller: controller,
+                          readOnly: readOnly,
                           style: textStyle ??
                               TextStyle(
                                 color: textColor,
