@@ -16,6 +16,7 @@ dependencies:
   component_icons:
     git:
       url: https://github.com/Renoldi/component_icon.git
+      
   groovin_widgets:
     git:
       url: https://github.com/nandanghermawan21/GroovinWidgets.git
