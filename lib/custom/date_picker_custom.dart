@@ -610,12 +610,35 @@ class MonthPicker extends StatefulWidget {
     this.iconBackColor,
     this.iconNext,
     this.iconNextColor,
+    this.currentDateColor,
+    this.currentDateStyle,
+    this.selectorColor,
+    this.textHeaderColor,
+    this.textHeaderStyle,
+    this.textItemColor,
+    this.textItemStyle,
+    this.textMountColor,
+    this.textMountStyle,
+    this.textSelectedColor,
+    this.textSelectedStyle,
   })  : assert(selectedDate != null),
         assert(onChanged != null),
         assert(!firstDate.isAfter(lastDate)),
         assert(selectedDate.isAfter(firstDate) ||
             selectedDate.isAtSameMomentAs(firstDate)),
         super(key: key);
+
+  final Color currentDateColor;
+  final TextStyle currentDateStyle;
+  final Color selectorColor;
+  final Color textHeaderColor;
+  final TextStyle textHeaderStyle;
+  final Color textItemColor;
+  final TextStyle textItemStyle;
+  final Color textMountColor;
+  final TextStyle textMountStyle;
+  final Color textSelectedColor;
+  final TextStyle textSelectedStyle;
 
   final IconData iconBack;
   final Color iconBackColor;
@@ -736,6 +759,17 @@ class _MonthPickerState extends State<MonthPicker>
       displayedMonth: month,
       selectableDayPredicate: widget.selectableDayPredicate,
       dragStartBehavior: widget.dragStartBehavior,
+      currentDateColor: widget.currentDateColor,
+      currentDateStyle: widget.currentDateStyle,
+      selectorColor: widget.selectorColor,
+      textHeaderColor: widget.textHeaderColor,
+      textHeaderStyle: widget.textHeaderStyle,
+      textItemColor: widget.textItemColor,
+      textItemStyle: widget.textItemStyle,
+      textMountColor: widget.textMountColor,
+      textMountStyle: widget.textMountStyle,
+      textSelectedColor: widget.textSelectedColor,
+      textSelectedStyle: widget.textSelectedStyle,
     );
   }
 
@@ -1008,7 +1042,30 @@ class _DatePickerDialog extends StatefulWidget {
     this.iconBackColor,
     this.iconNext,
     this.iconNextColor,
+    this.currentDateColor,
+    this.currentDateStyle,
+    this.selectorColor,
+    this.textHeaderColor,
+    this.textHeaderStyle,
+    this.textItemColor,
+    this.textItemStyle,
+    this.textMountColor,
+    this.textMountStyle,
+    this.textSelectedColor,
+    this.textSelectedStyle,
   }) : super(key: key);
+
+  final Color currentDateColor;
+  final TextStyle currentDateStyle;
+  final Color selectorColor;
+  final Color textHeaderColor;
+  final TextStyle textHeaderStyle;
+  final Color textItemColor;
+  final TextStyle textItemStyle;
+  final Color textMountColor;
+  final TextStyle textMountStyle;
+  final Color textSelectedColor;
+  final TextStyle textSelectedStyle;
 
   final DateTime initialDate;
   final DateTime firstDate;
@@ -1133,6 +1190,17 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
           iconBackColor: widget.iconBackColor,
           iconNext: widget.iconNext,
           iconNextColor: widget.iconNextColor,
+          currentDateColor: widget.currentDateColor,
+          currentDateStyle: widget.currentDateStyle,
+          selectorColor: widget.selectorColor,
+          textHeaderColor: widget.textHeaderColor,
+          textHeaderStyle: widget.textHeaderStyle,
+          textItemColor: widget.textItemColor,
+          textItemStyle: widget.textItemStyle,
+          textMountColor: widget.textMountColor,
+          textMountStyle: widget.textMountStyle,
+          textSelectedColor: widget.textSelectedColor,
+          textSelectedStyle: widget.textSelectedStyle,
         );
       case DatePickerMode.year:
         return YearPicker(
@@ -1323,6 +1391,17 @@ Future<DateTime> showDatePicker({
   Color iconBackColor,
   IconData iconNext,
   Color iconNextColor,
+  Color currentDateColor,
+  TextStyle currentDateStyle,
+  Color selectorColor,
+  Color textHeaderColor,
+  TextStyle textHeaderStyle,
+  Color textItemColor,
+  TextStyle textItemStyle,
+  Color textMountColor,
+  TextStyle textMountStyle,
+  Color textSelectedColor,
+  TextStyle textSelectedStyle,
 }) async {
   assert(initialDate != null);
   assert(firstDate != null);
@@ -1360,6 +1439,17 @@ Future<DateTime> showDatePicker({
     iconBackColor: iconBackColor,
     iconNext: iconNext,
     iconNextColor: iconNextColor,
+    currentDateColor:currentDateColor,
+    currentDateStyle:currentDateStyle,
+    selectorColor:selectorColor,
+    textHeaderColor:textHeaderColor,
+    textHeaderStyle:textHeaderStyle,
+    textItemColor:textItemColor,
+    textItemStyle:textItemStyle,
+    textMountColor:textMountColor,
+    textMountStyle:textMountStyle,
+    textSelectedColor:textSelectedColor,
+    textSelectedStyle:textSelectedStyle,
   );
 
   if (textDirection != null) {

@@ -1,5 +1,8 @@
 import 'package:component_set1/component/InputComponent.dart';
 import 'package:component_set1/custom/material_custom.dart';
+import 'package:component_set1/custom/date_time_picker.dart' as dateTimePicker;
+import 'package:example/module/inputComponent/main.dart';
+
 import 'presenter.dart';
 
 class View extends PresenterState {
@@ -27,14 +30,18 @@ class View extends PresenterState {
           componentBox(
               title: "dateTimePicker",
               component: InputComponent.inputTextWithCorner(
-                controller: dateController,
-                corner: 5,
-                hintText: "sample",
-                suffixIcon: Icon(Icons.calendar_today),
-                onTap: (){
-                  selectDate(context);
-                }
-              )),
+                  controller: dateController,
+                  corner: 5,
+                  hintText: "sample",
+                  suffixIcon: Icon(Icons.calendar_today),
+                  onTap: () {
+                    dateTimePicker
+                        .showDateTimePicker(context,
+                            mode: dateTimePicker.PickerMode.DateTime)
+                        .then((onValue) {
+                      print(onValue);
+                    });
+                  })),
         ],
       )),
     );
