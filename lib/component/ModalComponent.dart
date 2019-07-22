@@ -8,6 +8,7 @@ class ModalComponent {
   static void bottomModalWithCorner(BuildContext context,
       {double height,
       Color backgroundColor,
+      Widget backgroundWidget,
       double corner,
       Widget child,
       Color handleColor}) {
@@ -24,17 +25,26 @@ class ModalComponent {
                     topLeft: Radius.circular(corner ?? 15),
                     topRight: Radius.circular(corner ?? 15))),
             width: double.infinity,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
+            child: Stack(
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ModalDrawerHandle(
-                    handleColor: handleColor ?? Colors.indigoAccent,
-                  ),
+                Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  child: backgroundWidget,
                 ),
-                child ?? Container()
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ModalDrawerHandle(
+                        handleColor: handleColor ?? Colors.indigoAccent,
+                      ),
+                    ),
+                    child ?? Container()
+                  ],
+                ),
               ],
             ),
           ),
