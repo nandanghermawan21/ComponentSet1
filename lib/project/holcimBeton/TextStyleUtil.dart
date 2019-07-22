@@ -67,4 +67,9 @@ class TextStyleUtil {
   static TextStyle listTileSUbtitile() {
     return TextStyle(fontSize: FontUtil().l, color: Colors.white);
   }
+
+  static TextStyle infoTitle = TextStyle(
+      color: Colors.black38, fontWeight: FontWeight.w500, fontSize: FontUtil().s);
+
+
 }
