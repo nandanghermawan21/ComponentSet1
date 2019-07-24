@@ -52,13 +52,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
-  datetime_picker_formfield:
-    dependency: "direct main"
-    description:
-      name: datetime_picker_formfield
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.8"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -76,9 +69,11 @@ packages:
   flutter_svg:
     dependency: "direct main"
     description:
-      name: flutter_svg
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: b9062dce7f2b1b2da892b335652717ca43f986af
+      url: "https://github.com/dnfield/flutter_svg.git"
+    source: git
     version: "0.13.1"
   flutter_test:
     dependency: "direct dev"
@@ -102,10 +97,12 @@ packages:
   google_maps_flutter:
     dependency: "direct main"
     description:
-      name: google_maps_flutter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.5.19+2"
+      path: "packages/google_maps_flutter"
+      ref: HEAD
+      resolved-ref: ed53cab392dda8495d927ff8a703fad4e59bdfea
+      url: "git://github.com/flutter/plugins.git"
+    source: git
+    version: "0.5.20"
   google_maps_webservice:
     dependency: transitive
     description:
@@ -136,13 +133,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.3"
-  intl:
-    dependency: transitive
-    description:
-      name: intl
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.15.8"
   location:
     dependency: "direct main"
     description:
@@ -174,10 +164,12 @@ packages:
   overlay_support:
     dependency: "direct main"
     description:
-      name: overlay_support
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.0"
+      path: "."
+      ref: HEAD
+      resolved-ref: "5032ebf3c7347a326b5b75c3667abcb74854c98b"
+      url: "https://github.com/boyan01/overlay_support.git"
+    source: git
+    version: "1.0.0"
   path:
     dependency: transitive
     description:
@@ -223,10 +215,12 @@ packages:
   reorderables:
     dependency: "direct main"
     description:
-      name: reorderables
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.9"
+      path: "."
+      ref: HEAD
+      resolved-ref: "09693035066ac56d1c6e2a9a7a4056c95a39fdaf"
+      url: "https://github.com/hanshengchiu/reorderables.git"
+    source: git
+    version: "0.2.12"
   rxdart:
     dependency: transitive
     description:
