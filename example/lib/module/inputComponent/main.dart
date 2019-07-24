@@ -20,3 +20,13 @@ enum PickerType {
   ///
   Bottom
 }
+
+class User {
+  int id;
+  String nama;
+  String address;
+  String phone;
+  int age;
+
+  User({this.id, this.nama, this.address, this.age, this.phone});
+}

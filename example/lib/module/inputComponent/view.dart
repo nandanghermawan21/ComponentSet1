@@ -45,6 +45,13 @@ class View extends PresenterState {
                             "${date.day}/${date.month}/${date.year}  ${date.hour}:${date.minute}  ";
                     });
                   })),
+          ContainerComponent.componentBox(
+              title: "inputTextWithUnderLine",
+              component: InputComponent.dropDownWithCorner(
+                  // backgroundColor: ColorUtil().inputTextBackground,
+                  onChangeds: changedDropDownConcrete,
+                  value: currentConcrete,
+                  items: dropDownMenuConcrete)),
         ],
       )),
     );
