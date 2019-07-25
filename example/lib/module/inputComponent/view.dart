@@ -46,12 +46,23 @@ class View extends PresenterState {
                     });
                   })),
           ContainerComponent.componentBox(
-              title: "inputTextWithUnderLine",
+              title: "dropDownWithCorner",
               component: InputComponent.dropDownWithCorner(
                   // backgroundColor: ColorUtil().inputTextBackground,
                   onChangeds: changedDropDownConcrete,
-                  value: currentConcrete,
+                  value: currentConcrete ?? "1s",
                   items: dropDownMenuConcrete)),
+          ContainerComponent.componentBox(
+              title: "dropDownList",
+              component: DropDownList<dynamic>(
+                value: currentConcrete,
+                hint: Text("Masukan Nama"),
+                items: dropDownMenuConcrete,
+                onChange: ((value) {
+                  print(value.toString());
+                  // changedDropDownConcrete(value);
+                }),
+              )),
         ],
       )),
     );

@@ -9,6 +9,13 @@ class Presenter extends StatefulWidget {
 abstract class PresenterState extends State<Presenter> {
   TextEditingController dateController = new TextEditingController();
 
+   @override
+  void initState() {
+    super.initState();
+    dropDownMenuConcrete = getDropDownMenuStrukturTypes();
+    currentConcrete = dropDownMenuConcrete[0].value;
+  }
+
   List<User> users = [
     User(id: 1, nama: "Nandang Hermawan", address: "Kadungora Garut", age: 27),
     User(
