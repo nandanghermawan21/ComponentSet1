@@ -10,21 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # overlay_support: ^0.1.0
-  overlay_support:
-    git:
-      url: https://github.com/boyan01/overlay_support.git
-
-  # flutter_svg: ^0.13.0+2
-  flutter_svg:
-    git:
-      url: https://github.com/dnfield/flutter_svg.git
-  
-  #reorderables: ^0.2.9
-  reorderables:
-    git:
-      url: https://github.com/hanshengchiu/reorderables.git
-
+  overlay_support: ^0.1.0
+  flutter_svg: ^0.13.0+2
+  reorderables: ^0.2.9
   component_icons:
     git:
       url: https://github.com/Renoldi/component_icon.git
@@ -35,14 +23,10 @@ dependencies:
   flutter_google_places:
     git:
       url: https://github.com/nandanghermawan21/flutter_google_places.git
-  # google_maps_flutter: ^0.5.11+1
-  google_maps_flutter:
-    git:
-      url: git://github.com/flutter/plugins.git
-      path: packages/google_maps_flutter
-
+  google_maps_flutter: ^0.5.11+1
   location: ^2.3.5
   geolocator: ^4.0.3
+  datetime_picker_formfield: ^0.1.8
  
 
 dev_dependencies:
