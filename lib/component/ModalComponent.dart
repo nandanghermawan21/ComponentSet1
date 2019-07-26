@@ -267,6 +267,7 @@ class HolcimBetonModal {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ButtonComponent.roundedButton(
+                      onPressed: onConfirm,
                       width: 200,
                       text: confirmText ?? "Confirmation",
                       textstyle: confirmTextStyle ??

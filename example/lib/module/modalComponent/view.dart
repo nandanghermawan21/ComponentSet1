@@ -16,11 +16,34 @@ class View extends PresenterState {
           child: ListView(
         children: <Widget>[
           ContainerComponent.componentBox(
-            title: "Modal Bottom Standart",
+            title: "ModalComponent.bottomModalWithCorner",
             component: ButtonComponent.roundedButton(
                 text: "Click Me",
                 onPressed: () {
-                  ModalComponent.bottomModalWithCorner(context);
+                  ModalComponent.bottomModalWithCorner(
+                    context,
+                    child: GestureDetector(
+                      onTap: () {
+                        print("fire me");
+                      },
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        color: Colors.red,
+                      ),
+                    ),
+                  );
+                }),
+          ),
+          ContainerComponent.componentBox(
+            title: "HolcimBetonModal.modalBottomComfirmation",
+            component: ButtonComponent.roundedButton(
+                text: "Click Me",
+                onPressed: () {
+                  HolcimBetonModal.modalBottomComfirmation(context,
+                      onConfirm: () {
+                    print("on confirm callback");
+                  });
                 }),
           ),
           ContainerComponent.componentBox(
