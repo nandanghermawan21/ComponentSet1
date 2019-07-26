@@ -25,27 +25,35 @@ class ModalComponent {
                     topLeft: Radius.circular(corner ?? 15),
                     topRight: Radius.circular(corner ?? 15))),
             width: double.infinity,
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  height: double.infinity,
-                  width: double.infinity,
-                  child: backgroundWidget,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
+            child: GestureDetector(
+              onTap: (){
+                // print("test");
+              },
+              child: Container(
+                color: Colors.transparent,
+                child: Stack(
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ModalDrawerHandle(
-                        handleColor: handleColor ?? Colors.indigoAccent,
-                      ),
+                    Container(
+                      height: double.infinity,
+                      width: double.infinity,
+                      child: backgroundWidget,
                     ),
-                    child ?? Container()
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ModalDrawerHandle(
+                            handleColor: handleColor ?? Colors.indigoAccent,
+                          ),
+                        ),
+                        child ?? Container()
+                      ],
+                    ),
                   ],
                 ),
-              ],
+              ),
             ),
           ),
         );
