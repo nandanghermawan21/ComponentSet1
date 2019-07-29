@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as prefix0;
 
 import 'TextStyleUtil.dart';
-
+//update
 class BottonComponent {
   static GestureDetector mainBotton({
     @required String text,
