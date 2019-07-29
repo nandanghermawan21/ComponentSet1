@@ -3,6 +3,7 @@ import 'package:component_set1/component/DecorationComponent.dart';
 import 'package:component_set1/project/holcimBeton/ColorUtil.dart';
 import 'package:component_set1/project/holcimBeton/FontUtil.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 
 import 'TextStyleUtil.dart';
 
@@ -12,6 +13,9 @@ class BottonComponent {
     @required VoidCallback onTap,
     double fontSize,
     FontWeight fontWeight,
+    Color textColor,
+    TextStyle textStyle,
+    Color borderColor,
   }) {
     /// design botton utama
     /// bentuk bottonnya transparan dengan border berwarna hijau neon (memiliki shadow)
@@ -27,20 +31,22 @@ class BottonComponent {
             color: Colors.transparent,
             boxShadow: [
               CustomBoxShadow(
-                  color: ColorUtil().greenColor,
+                  color: borderColor ?? ColorUtil().greenColor,
                   blurRadius: 6.0,
                   blurStyle: BlurStyle.outer),
             ],
             borderRadius: BorderRadius.all(Radius.circular(5)),
-            border: Border.all(width: 3, color: ColorUtil().greenColor)),
+            border: Border.all(
+                width: 3, color: borderColor ?? ColorUtil().greenColor)),
         child: Center(
           child: Text(
             "$text",
-            style: TextStyle(
-                fontWeight: fontWeight ?? FontWeight.bold,
-                color: Colors.white,
-                fontFamily: FontUtil().primary,
-                fontSize: fontSize ?? FontUtil().l),
+            style: textStyle ??
+                TextStyle(
+                    fontWeight: fontWeight ?? FontWeight.bold,
+                    color: textColor ?? Colors.white,
+                    fontFamily: FontUtil().primary,
+                    fontSize: fontSize ?? FontUtil().l),
           ),
         ),
       ),
@@ -65,8 +71,7 @@ class BottonComponent {
       TextStyle titleStyle,
       Color backButtonColor,
       Color actionTextColor,
-      TextStyle actionTextStyle
-      }) {
+      TextStyle actionTextStyle}) {
     return AppBar(
       centerTitle: false,
       title: Stack(
@@ -74,11 +79,12 @@ class BottonComponent {
           Center(
             child: Text(
               "$title",
-              style: titleStyle ?? TextStyle(
-                  color: titleColor ?? ColorUtil().mainColor,
-                  fontFamily: FontUtil().primary,
-                  fontSize: FontUtil().lPlus,
-                  fontWeight: FontWeight.bold),
+              style: titleStyle ??
+                  TextStyle(
+                      color: titleColor ?? ColorUtil().mainColor,
+                      fontFamily: FontUtil().primary,
+                      fontSize: FontUtil().lPlus,
+                      fontWeight: FontWeight.bold),
             ),
           ),
           Row(
@@ -112,7 +118,9 @@ class BottonComponent {
                       child: Text(
                         "$actionText",
                         style: actionTextStyle ??
-                            TextStyleUtil.linkLabel(fontSize: FontUtil().lPlus, color: actionTextColor),
+                            TextStyleUtil.linkLabel(
+                                fontSize: FontUtil().lPlus,
+                                color: actionTextColor),
                       ),
                     ),
                     Container(
