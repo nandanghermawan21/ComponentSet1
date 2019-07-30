@@ -12,7 +12,7 @@ class ColorUtil {
   Color yellow = Color(0xFFFFC61C);
   Color green = Color(0xFFA8C700);
 
-  Color greenColor = Color(0xFFA8C700);
+  Color greenColor = Color(0xFFFFFFFF);
   Color greyColor = Color(0xFF7B7B80);
   Color blackColor = Color(0xFF1A1A1A);
   Color greenListProject = Color(0xFF4BD896);
