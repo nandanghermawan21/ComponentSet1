@@ -13,6 +13,6 @@ class HolcimBetonColor {
   Color green = Color(0xFFA8C700);
 
   Color greenColor = Color(0xFFA8C700);
-  Color greyColor = Color(0xFF7B7B80);
-  Color blackColor = Color(0xFF1A1A1A);
+  Color greyColor = Color(0xFF008BD0);
+  Color blackColor = Color(0xFF001568);
 }

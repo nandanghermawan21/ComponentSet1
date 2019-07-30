@@ -20,11 +20,11 @@ class DecorationComponent {
           HolcimBetonColor().blackColor,
         ],
       ),
-      image: DecorationImage(
-        image: AssetImage(img),
-        fit: BoxFit.fitWidth,
-        alignment: aligment,
-      ),
+      // image: DecorationImage(
+      //   image: AssetImage(img),
+      //   fit: BoxFit.fitWidth,
+      //   alignment: aligment,
+      // ),
     );
   }
 
