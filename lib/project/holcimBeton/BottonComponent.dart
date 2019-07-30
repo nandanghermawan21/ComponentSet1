@@ -29,12 +29,12 @@ class BottonComponent {
         padding: EdgeInsets.all(5),
         decoration: BoxDecoration(
             color: Colors.transparent,
-            boxShadow: [
-              CustomBoxShadow(
-                  color: borderColor ?? ColorUtil().greenColor,
-                  blurRadius: 6.0,
-                  blurStyle: BlurStyle.outer),
-            ],
+            // boxShadow: [
+            //   CustomBoxShadow(
+            //       color: borderColor ?? ColorUtil().greenColor,
+            //       blurRadius: 6.0,
+            //       blurStyle: BlurStyle.outer),
+            // ],
             borderRadius: BorderRadius.all(Radius.circular(5)),
             border: Border.all(
                 width: 3, color: borderColor ?? ColorUtil().greenColor)),

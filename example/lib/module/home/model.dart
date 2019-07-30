@@ -6,6 +6,7 @@ import 'package:component_set1/project/holcimBeton/module/location/main.dart'
     as holcimBetonLocation;
 import '../inputComponent/main.dart' as inputComponent;
 import '../modalComponent/main.dart' as modalComponent;
+import '../holcimBeton/main.dart' as holcimBeton;
 
 class Menu {
   PeojectName project;
@@ -75,6 +76,13 @@ class Menu {
         description: "Modal dan popup component",
         icon: Icons.add_box,
         widget: modalComponent.Presenter(),
+      ),
+      Menu(
+        project: PeojectName.general,
+        title: "Holcim Beton Component",
+        description: "All about Holcim Beton Component",
+        icon: Icons.add_box,
+        widget: holcimBeton.Presenter(),
       ),
     ];
   }
