@@ -19,11 +19,16 @@ class TextStyleUtil {
         fontWeight: FontWeight.normal);
   }
 
-  static TextStyle mainLabel({double fontSize, FontWeight fontWeight}) {
-    return TextStyle(color: Colors.white, fontSize: fontSize ?? FontUtil().l, fontWeight: fontWeight ?? FontWeight.normal);
+  static TextStyle mainLabel(
+      {double fontSize, FontWeight fontWeight, Color color}) {
+    return TextStyle(
+        color: color ?? Colors.white,
+        fontSize: fontSize ?? FontUtil().l,
+        fontWeight: fontWeight ?? FontWeight.normal);
   }
 
-  static TextStyle linkLabel({double fontSize, FontWeight fontWeight, Color color}) {
+  static TextStyle linkLabel(
+      {double fontSize, FontWeight fontWeight, Color color}) {
     return TextStyle(
         color: color ?? ColorUtil().mainColor,
         fontSize: fontSize ?? FontUtil().l,
@@ -69,8 +74,7 @@ class TextStyleUtil {
   }
 
   static TextStyle infoTitle = TextStyle(
-      color: Colors.black38, fontWeight: FontWeight.w500, fontSize: FontUtil().s);
-
-  
-
+      color: Colors.black38,
+      fontWeight: FontWeight.w500,
+      fontSize: FontUtil().s);
 }
