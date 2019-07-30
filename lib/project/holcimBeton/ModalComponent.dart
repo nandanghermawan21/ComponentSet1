@@ -20,11 +20,11 @@ class ModalComponent {
           child: Container(
             height: height > 300 ? 300 : height,
             width: double.infinity,
-            child: SvgPicture.string(
-              modalBackground,
-              fit: BoxFit.fitHeight,
-              alignment: Alignment.bottomLeft,
-            ),
+            // child: SvgPicture.string(
+            //   modalBackground,
+            //   fit: BoxFit.fitHeight,
+            //   alignment: Alignment.bottomLeft,
+            // ),
           ),
         ),
         height: height,
