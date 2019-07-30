@@ -30,7 +30,7 @@ class TextStyleUtil {
   static TextStyle linkLabel(
       {double fontSize, FontWeight fontWeight, Color color}) {
     return TextStyle(
-        color: color ?? ColorUtil().mainColor,
+        color: color ?? ColorUtil().greenColor,
         fontSize: fontSize ?? FontUtil().l,
         fontWeight: fontWeight ?? FontWeight.normal);
   }
