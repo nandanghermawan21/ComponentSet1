@@ -21,10 +21,11 @@ class View extends PresenterState {
                   })),
           ContainerComponent.componentBox(
               title: "MainButton",
+              height: 700,
               background: Colors.green,
               component: Container(
                 width: double.infinity,
-                height: 50,
+                height: 700 - 50.0,
                 // color: Colors.red,
                 decoration: DecorationComponent.boxDecoration(),
               )),
