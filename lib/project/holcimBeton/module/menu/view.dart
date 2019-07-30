@@ -146,11 +146,11 @@ class View extends PresenterState {
         color: ColorUtil().scafoldColor,
         borderRadius: BorderRadius.all(Radius.circular(14)),
         boxShadow: [
-          BoxShadow(
-            color: ColorUtil().scafoldColor.withOpacity(0.5),
-            blurRadius: 5.0,
-            offset: Offset(5, 2),
-          ),
+          // BoxShadow(
+          //   color: ColorUtil().scafoldColor.withOpacity(0.5),
+          //   blurRadius: 5.0,
+          //   offset: Offset(5, 2),
+          // ),
         ],
       ),
       child: ListView(padding: EdgeInsets.only(top: 0), children: <Widget>[
