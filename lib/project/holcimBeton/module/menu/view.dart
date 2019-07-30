@@ -25,7 +25,7 @@ class View extends PresenterState {
         VoidCallback onTap,
         double sizeTextMenu = 12,
         String fontTextFamily,
-        bool neonStyle = true}) {
+        bool neonStyle = false}) {
       return Container(
           margin: EdgeInsets.only(left: 2, right: 2, bottom: 2),
           width: sizeMenuButton,
