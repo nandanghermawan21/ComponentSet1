@@ -44,7 +44,7 @@ class DecorationComponent {
         child: SvgPicture.string(
           sbbiLogo,
           allowDrawingOutsideViewBox: true,
-          height: 35,
+          height: 50,
           width: 100,
           colorBlendMode: BlendMode.clear,
         ),
