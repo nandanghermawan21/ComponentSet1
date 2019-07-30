@@ -1,7 +1,6 @@
 import 'package:example/component/containerComponent.dart';
 import 'package:flutter/material.dart';
 import 'presenter.dart';
-import 'package:component_set1/component/InputComponent.dart';
 import 'package:component_set1/project/holcimBeton/BottonComponent.dart';
 
 class View extends PresenterState {
