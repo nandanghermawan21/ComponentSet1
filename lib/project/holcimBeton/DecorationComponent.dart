@@ -40,14 +40,6 @@ class DecorationComponent {
         margin: margin ?? EdgeInsets.only(top: 60, left: 20),
         decoration: BoxDecoration(
           color: Colors.transparent,
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-          border: Border.all(width: 3, color: HolcimBetonColor().greenColor),
-          boxShadow: [
-            decorationBase.CustomBoxShadow(
-                color: ColorUtil().greenColor,
-                blurRadius: 6.0,
-                blurStyle: BlurStyle.outer),
-          ],
         ),
         child: SvgPicture.string(
           sbbiLogo,
