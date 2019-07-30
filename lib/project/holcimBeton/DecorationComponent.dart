@@ -41,12 +41,17 @@ class DecorationComponent {
         decoration: BoxDecoration(
           color: Colors.transparent,
         ),
-        child: SvgPicture.string(
-          sbbiLogo,
-          allowDrawingOutsideViewBox: true,
-          height: 15,
-          width: 80,
-          colorBlendMode: BlendMode.clear,
+        child: Column(
+          children: <Widget>[
+            SvgPicture.string(
+              sbbiLogo,
+              allowDrawingOutsideViewBox: true,
+              height: 15,
+              width: 80,
+              colorBlendMode: BlendMode.clear,
+            ),
+            Text("Transfortation Management System")
+          ],
         ),
       ),
     );
