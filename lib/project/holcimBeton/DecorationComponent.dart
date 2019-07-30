@@ -35,6 +35,7 @@ class DecorationComponent {
     return Align(
       alignment: Alignment.topLeft,
       child: Container(
+        width: double.infinity,
         padding: EdgeInsets.fromLTRB(14, 7, 14, 7),
         margin: margin ?? EdgeInsets.only(top: 60, left: 20),
         decoration: BoxDecoration(
