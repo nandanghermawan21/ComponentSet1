@@ -8,11 +8,11 @@ class ScafoldComponent {
     BuildContext context, {
     String title = "",
     bool backTo = true,
-    Color backGroundColor = const Color(0xFF565657),
-    Color titleColor = const Color(0xFFA8C700),
+    Color backGroundColor = Colors.transparent,
+    Color titleColor = const Color(0xFFFFFFFF),
     List<Widget> listAction,
     String fontFamily,
-    Color iconColor = const Color(0xFFA8C700),
+    Color iconColor = const Color(0xFFFFFFFF),
   }) {
     return AppBar(
       centerTitle: true,
