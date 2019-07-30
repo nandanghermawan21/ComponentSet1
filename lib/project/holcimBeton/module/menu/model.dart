@@ -8,4 +8,5 @@ class HolcimBetonMenuModel {
   EdgeInsets iconMargin;
 
   HolcimBetonMenuModel({this.textMenu, this.onTap, this.icon, this.intBadge, this.iconMargin = const EdgeInsets.all(0)});
+
 }
