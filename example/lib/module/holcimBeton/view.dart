@@ -1,3 +1,4 @@
+import 'package:component_set1/project/holcimBeton/DecorationComponent.dart';
 import 'package:example/component/containerComponent.dart';
 import 'package:flutter/material.dart';
 import 'presenter.dart';
@@ -17,7 +18,16 @@ class View extends PresenterState {
                   text: "sample botton",
                   onTap: () {
                     print("tab the main button");
-                  }))
+                  })),
+          ContainerComponent.componentBox(
+              title: "MainButton",
+              background: Colors.green,
+              component: Container(
+                width: double.infinity,
+                height: 50,
+                // color: Colors.red,
+                decoration: DecorationComponent.boxDecoration(),
+              )),
         ],
       ),
     );
