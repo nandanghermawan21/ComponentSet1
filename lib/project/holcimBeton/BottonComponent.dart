@@ -37,7 +37,7 @@ class BottonComponent {
             // ],
             borderRadius: BorderRadius.all(Radius.circular(5)),
             border: Border.all(
-                width: 3, color: borderColor ?? ColorUtil().greenColor)),
+                width: 3, color: borderColor ?? ColorUtil().mainColor)),
         child: Center(
           child: Text(
             "$text",
