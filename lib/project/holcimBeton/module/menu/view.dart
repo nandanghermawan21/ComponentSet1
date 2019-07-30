@@ -24,7 +24,8 @@ class View extends PresenterState {
         Color colorRxtMenu = Colors.white,
         VoidCallback onTap,
         double sizeTextMenu = 12,
-        String fontTextFamily}) {
+        String fontTextFamily,
+        bool neonStyle = true}) {
       return Container(
           margin: EdgeInsets.only(left: 2, right: 2, bottom: 2),
           width: sizeMenuButton,
@@ -49,10 +50,14 @@ class View extends PresenterState {
                           color: Colors.transparent,
                           borderRadius: BorderRadius.all(Radius.circular(50)),
                           boxShadow: [
-                            CustomBoxShadow(
-                                color: ColorUtil().greenColor,
-                                blurRadius: 6.0,
-                                blurStyle: BlurStyle.outer),
+                            neonStyle
+                                ? CustomBoxShadow(
+                                    color: ColorUtil().greenColor,
+                                    blurRadius: 6.0,
+                                    blurStyle: BlurStyle.outer)
+                                : CustomBoxShadow(
+                                  color: Colors.transparent
+                                ),
                           ],
                           border: Border.all(
                             color: ColorUtil().mainColor,
