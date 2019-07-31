@@ -25,7 +25,7 @@ dependencies:
       url: https://github.com/nandanghermawan21/flutter_google_places.git
   google_maps_flutter: ^0.5.11+1
   location: ^2.3.5
-  geolocator: ^4.0.3
+  geolocator: ^5.1.1
   datetime_picker_formfield: ^0.1.8
  
 
