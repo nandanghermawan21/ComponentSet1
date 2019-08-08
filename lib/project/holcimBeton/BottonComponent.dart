@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as prefix0;
 
 import 'TextStyleUtil.dart';
+
 //update
 class BottonComponent {
   static GestureDetector mainBotton({
@@ -62,6 +63,7 @@ class BottonComponent {
   static AppBar customAppBar1(
       {@required BuildContext context,
       @required String actionText,
+      bool backButton = true,
       String title = "",
       Widget rightWidget,
       VoidCallback onBack,
@@ -89,35 +91,39 @@ class BottonComponent {
           ),
           Row(
             children: <Widget>[
-              Container(
-                width: 40,
-                padding: EdgeInsets.all(0),
-                margin: EdgeInsets.all(0),
-                child: GestureDetector(
-                  onTap: () {
-                    onBack ?? Navigator.of(context).pop();
-                  },
-                  child: Center(
-                    child: Icon(
-                      FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
-                      size: FontUtil().lPlus,
-                      color: backButtonColor ?? ColorUtil().mainColor,
-                    ),
-                  ),
-                ),
-              ),
+              backButton
+                  ? Container(
+                      width: 40,
+                      padding: EdgeInsets.all(0),
+                      margin: EdgeInsets.all(0),
+                      child: GestureDetector(
+                        onTap: () {
+                          onBack ?? Navigator.of(context).pop();
+                        },
+                        child: Center(
+                          child: Icon(
+                            FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
+                            size: FontUtil().lPlus,
+                            color: backButtonColor ?? ColorUtil().mainColor,
+                          ),
+                        ),
+                      ),
+                    )
+                  : Container(),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      "$actionText",
-                      style: actionTextStyle ??
-                          TextStyleUtil.linkLabel(
-                              fontSize: FontUtil().lPlus,
-                              color: actionTextColor),
-                    ),
+                    backButton
+                        ? Text(
+                            "$actionText",
+                            style: actionTextStyle ??
+                                TextStyleUtil.linkLabel(
+                                    fontSize: FontUtil().lPlus,
+                                    color: actionTextColor),
+                          )
+                        : Container(),
                     Container(
                       child: rightWidget ?? Container(),
                     ),
