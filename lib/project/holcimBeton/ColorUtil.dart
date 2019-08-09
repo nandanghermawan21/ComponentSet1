@@ -14,7 +14,7 @@ class ColorUtil {
   Color yellow = Color(0xFFFFC61C);
   Color green = Color(0xFFA8C700);
 
-  Color greenColor = Color(0xFFA8C700);
+  Color greenColor = Colors.white;
   Color greyColor = Color(0xFF008BD0);
   Color blackColor = Color(0xFF001568);
   Color greenListProject = Color(0xFF4BD896);
