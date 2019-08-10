@@ -94,6 +94,7 @@ class BottonComponent {
               backButton
                   ? Container(
                       width: 40,
+                      color: Colors.red,
                       padding: EdgeInsets.all(0),
                       margin: EdgeInsets.all(0),
                       child: GestureDetector(
@@ -101,7 +102,6 @@ class BottonComponent {
                           onBack ?? Navigator.of(context).pop();
                         },
                         child: Container(
-                          color: Colors.red,
                           child: Center(
                             child: Icon(
                               FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
