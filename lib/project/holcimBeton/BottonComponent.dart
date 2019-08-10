@@ -76,8 +76,8 @@ class BottonComponent {
       TextStyle actionTextStyle}) {
     return AppBar(
       centerTitle: false,
-      flexibleSpace: Padding(
-        padding: const EdgeInsets.only(top: 18),
+      flexibleSpace: Container(
+        color: Colors.red,
         child: Stack(
           children: <Widget>[
             Center(
