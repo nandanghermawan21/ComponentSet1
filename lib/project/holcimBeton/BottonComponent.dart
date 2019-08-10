@@ -92,15 +92,15 @@ class BottonComponent {
           Row(
             children: <Widget>[
               backButton
-                  ? Container(
-                      width: 40,
-                      color: Colors.green,
-                      padding: EdgeInsets.all(0),
-                      margin: EdgeInsets.all(0),
-                      child: GestureDetector(
-                        onTap: () {
-                          onBack ?? Navigator.of(context).pop();
-                        },
+                  ? GestureDetector(
+                      onTap: () {
+                        onBack ?? Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        width: 40,
+                        color: Colors.green,
+                        padding: EdgeInsets.all(0),
+                        margin: EdgeInsets.all(0),
                         child: Container(
                           child: Center(
                             child: Icon(
@@ -110,8 +110,7 @@ class BottonComponent {
                             ),
                           ),
                         ),
-                      ),
-                    )
+                      ))
                   : Container(),
               Expanded(
                 child: Row(
