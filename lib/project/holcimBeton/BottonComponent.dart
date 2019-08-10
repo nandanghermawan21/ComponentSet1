@@ -77,77 +77,75 @@ class BottonComponent {
     return AppBar(
       centerTitle: false,
       flexibleSpace: Container(
-        color: Colors.red,
-        child: Center(
-          child: Stack(
-            children: <Widget>[
-              Center(
-                child: Text(
-                  "$title",
-                  style: titleStyle ??
-                      TextStyle(
-                          color: titleColor ?? ColorUtil().mainColor,
-                          fontFamily: FontUtil().primary,
-                          fontSize: FontUtil().lPlus,
-                          fontWeight: FontWeight.bold),
-                ),
+        padding: const EdgeInsets.only(top: 18),
+        child: Stack(
+          children: <Widget>[
+            Center(
+              child: Text(
+                "$title",
+                style: titleStyle ??
+                    TextStyle(
+                        color: titleColor ?? ColorUtil().mainColor,
+                        fontFamily: FontUtil().primary,
+                        fontSize: FontUtil().lPlus,
+                        fontWeight: FontWeight.bold),
               ),
-              Row(
-                children: <Widget>[
-                  backButton
-                      ? GestureDetector(
-                          onTap: () {
-                            onBack ?? Navigator.of(context).pop();
-                          },
+            ),
+            Row(
+              children: <Widget>[
+                backButton
+                    ? GestureDetector(
+                        onTap: () {
+                          onBack ?? Navigator.of(context).pop();
+                        },
+                        child: Container(
+                          width: 40,
+                          color: Colors.transparent,
+                          padding: EdgeInsets.all(0),
+                          margin: EdgeInsets.all(0),
                           child: Container(
-                            width: 40,
-                            color: Colors.transparent,
-                            padding: EdgeInsets.all(0),
-                            margin: EdgeInsets.all(0),
-                            child: Container(
-                              child: Center(
-                                child: Icon(
-                                  FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
-                                  size: FontUtil().lPlus,
-                                  color: backButtonColor ?? ColorUtil().mainColor,
-                                ),
+                            child: Center(
+                              child: Icon(
+                                FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
+                                size: FontUtil().lPlus,
+                                color: backButtonColor ?? ColorUtil().mainColor,
                               ),
                             ),
-                          ))
-                      : Container(),
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        backButton
-                            ? GestureDetector(
-                                onTap: () {
-                                  onBack ?? Navigator.of(context).pop();
-                                },
-                                child: Container(
-                                  color: Colors.transparent,
-                                  height: double.infinity,
-                                  child: Center(
-                                      child: Text(
-                                    "$actionText",
-                                    style: actionTextStyle ??
-                                        TextStyleUtil.linkLabel(
-                                            fontSize: FontUtil().lPlus,
-                                            color: actionTextColor),
-                                  )),
-                                ))
-                            : Container(),
-                        Container(
-                          child: rightWidget ?? Container(),
-                        ),
-                      ],
-                    ),
+                          ),
+                        ))
+                    : Container(),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      backButton
+                          ? GestureDetector(
+                              onTap: () {
+                                onBack ?? Navigator.of(context).pop();
+                              },
+                              child: Container(
+                                color: Colors.transparent,
+                                height: double.infinity,
+                                child: Center(
+                                    child: Text(
+                                  "$actionText",
+                                  style: actionTextStyle ??
+                                      TextStyleUtil.linkLabel(
+                                          fontSize: FontUtil().lPlus,
+                                          color: actionTextColor),
+                                )),
+                              ))
+                          : Container(),
+                      Container(
+                        child: rightWidget ?? Container(),
+                      ),
+                    ],
                   ),
-                ],
-              )
-            ],
-          ),
+                ),
+              ],
+            )
+          ],
         ),
       ),
       automaticallyImplyLeading: false,
