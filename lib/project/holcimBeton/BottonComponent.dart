@@ -93,7 +93,7 @@ class BottonComponent {
             children: <Widget>[
               backButton
                   ? Container(
-                      width: 40,
+                      width: 100,
                       color: Colors.green,
                       padding: EdgeInsets.all(0),
                       margin: EdgeInsets.all(0),
