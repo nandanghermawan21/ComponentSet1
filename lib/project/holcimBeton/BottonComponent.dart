@@ -119,15 +119,13 @@ class BottonComponent {
                   children: <Widget>[
                     backButton
                         ? Container(
-                            color: Colors.green,
-                            height: double.infinity,
                             child: Text(
-                              "$actionText",
-                              style: actionTextStyle ??
-                                  TextStyleUtil.linkLabel(
-                                      fontSize: FontUtil().lPlus,
-                                      color: actionTextColor),
-                            ))
+                            "$actionText",
+                            style: actionTextStyle ??
+                                TextStyleUtil.linkLabel(
+                                    fontSize: FontUtil().lPlus,
+                                    color: actionTextColor),
+                          ))
                         : Container(),
                     Container(
                       child: rightWidget ?? Container(),
