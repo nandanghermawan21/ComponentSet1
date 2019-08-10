@@ -77,7 +77,7 @@ class BottonComponent {
     return AppBar(
       centerTitle: false,
       flexibleSpace: Padding(
-        padding: const EdgeInsets.only(top: 5),
+        padding: const EdgeInsets.only(top: 15),
         child: Stack(
           children: <Widget>[
             Center(
