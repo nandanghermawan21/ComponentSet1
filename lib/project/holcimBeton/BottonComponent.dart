@@ -100,11 +100,14 @@ class BottonComponent {
                         onTap: () {
                           onBack ?? Navigator.of(context).pop();
                         },
-                        child: Center(
-                          child: Icon(
-                            FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
-                            size: FontUtil().lPlus,
-                            color: backButtonColor ?? ColorUtil().mainColor,
+                        child: Container(
+                          color: Colors.red,
+                          child: Center(
+                            child: Icon(
+                              FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
+                              size: FontUtil().lPlus,
+                              color: backButtonColor ?? ColorUtil().mainColor,
+                            ),
                           ),
                         ),
                       ),
