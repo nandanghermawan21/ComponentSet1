@@ -119,7 +119,7 @@ class BottonComponent {
                   children: <Widget>[
                     backButton
                         ? Container(
-                            color: Colors.green,
+                            color: Colors.transparent,
                             height: double.infinity,
                             child: Text(
                             "$actionText",
