@@ -94,7 +94,7 @@ class BottonComponent {
               backButton
                   ? Container(
                       width: 40,
-                      color: Colors.red,
+                      color: Colors.green,
                       padding: EdgeInsets.all(0),
                       margin: EdgeInsets.all(0),
                       child: GestureDetector(
