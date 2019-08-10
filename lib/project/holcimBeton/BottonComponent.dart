@@ -118,16 +118,22 @@ class BottonComponent {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     backButton
-                        ? Container(
-                            color: Colors.transparent,
-                            height: double.infinity,
-                            child: Text(
-                            "$actionText",
-                            style: actionTextStyle ??
-                                TextStyleUtil.linkLabel(
-                                    fontSize: FontUtil().lPlus,
-                                    color: actionTextColor),
-                          ))
+                        ? GestureDetector(
+                            onTap: () {
+                              onBack ?? Navigator.of(context).pop();
+                            },
+                            child: Container(
+                              color: Colors.transparent,
+                              height: double.infinity,
+                              child: Center(
+                                  child: Text(
+                                "$actionText",
+                                style: actionTextStyle ??
+                                    TextStyleUtil.linkLabel(
+                                        fontSize: FontUtil().lPlus,
+                                        color: actionTextColor),
+                              )),
+                            ))
                         : Container(),
                     Container(
                       child: rightWidget ?? Container(),
