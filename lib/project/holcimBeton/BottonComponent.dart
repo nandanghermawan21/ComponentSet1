@@ -120,6 +120,7 @@ class BottonComponent {
                     backButton
                         ? Container(
                             color: Colors.green,
+                            height: double.infinity,
                             child: Text(
                             "$actionText",
                             style: actionTextStyle ??
