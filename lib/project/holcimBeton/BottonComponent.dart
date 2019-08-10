@@ -98,7 +98,7 @@ class BottonComponent {
                       },
                       child: Container(
                         width: 40,
-                        color: Colors.green,
+                        color: Colors.transparent,
                         padding: EdgeInsets.all(0),
                         margin: EdgeInsets.all(0),
                         child: Container(
@@ -118,13 +118,15 @@ class BottonComponent {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     backButton
-                        ? Text(
-                            "$actionText",
-                            style: actionTextStyle ??
-                                TextStyleUtil.linkLabel(
-                                    fontSize: FontUtil().lPlus,
-                                    color: actionTextColor),
-                          )
+                        ? Container(
+                            color: Colors.green,
+                            child: Text(
+                              "$actionText",
+                              style: actionTextStyle ??
+                                  TextStyleUtil.linkLabel(
+                                      fontSize: FontUtil().lPlus,
+                                      color: actionTextColor),
+                            ))
                         : Container(),
                     Container(
                       child: rightWidget ?? Container(),
