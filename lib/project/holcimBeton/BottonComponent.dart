@@ -76,7 +76,7 @@ class BottonComponent {
       TextStyle actionTextStyle}) {
     return AppBar(
       centerTitle: false,
-      title: Stack(
+      flexibleSpace: Stack(
         children: <Widget>[
           Center(
             child: Text(
@@ -93,7 +93,7 @@ class BottonComponent {
             children: <Widget>[
               backButton
                   ? Container(
-                      width: 100,
+                      width: 40,
                       color: Colors.green,
                       padding: EdgeInsets.all(0),
                       margin: EdgeInsets.all(0),
