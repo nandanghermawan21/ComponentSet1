@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as prefix0;
 
 import 'TextStyleUtil.dart';
+
 //update
 class BottonComponent {
   static GestureDetector mainBotton({
@@ -62,6 +63,7 @@ class BottonComponent {
   static AppBar customAppBar1(
       {@required BuildContext context,
       @required String actionText,
+      bool backButton = true,
       String title = "",
       Widget rightWidget,
       VoidCallback onBack,
@@ -74,64 +76,77 @@ class BottonComponent {
       TextStyle actionTextStyle}) {
     return AppBar(
       centerTitle: false,
-      title: Stack(
-        children: <Widget>[
-          Center(
-            child: Text(
-              "$title",
-              style: titleStyle ??
-                  TextStyle(
-                      color: titleColor ?? ColorUtil().mainColor,
-                      fontFamily: FontUtil().primary,
-                      fontSize: FontUtil().lPlus,
-                      fontWeight: FontWeight.bold),
+      flexibleSpace: Container(
+        padding: const EdgeInsets.only(top: 18),
+        child: Stack(
+          children: <Widget>[
+            Center(
+              child: Text(
+                "$title",
+                style: titleStyle ??
+                    TextStyle(
+                        color: titleColor ?? ColorUtil().mainColor,
+                        fontFamily: FontUtil().primary,
+                        fontSize: FontUtil().lPlus,
+                        fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          Row(
-            children: <Widget>[
-              Container(
-                width: 40,
-                padding: EdgeInsets.all(0),
-                margin: EdgeInsets.all(0),
-                child: GestureDetector(
-                  onTap: () {
-                    onBack ?? Navigator.of(context).pop();
-                  },
-                  child: Center(
-                    child: Icon(
-                      FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
-                      size: FontUtil().lPlus,
-                      color: backButtonColor ?? ColorUtil().mainColor,
-                    ),
+            Row(
+              children: <Widget>[
+                backButton
+                    ? GestureDetector(
+                        onTap: () {
+                          onBack ?? Navigator.of(context).pop();
+                        },
+                        child: Container(
+                          width: 40,
+                          color: Colors.transparent,
+                          padding: EdgeInsets.all(0),
+                          margin: EdgeInsets.all(0),
+                          child: Container(
+                            child: Center(
+                              child: Icon(
+                                FontAwesomeRegular(FontAwesomeId.fa_arrow_left),
+                                size: FontUtil().lPlus,
+                                color: backButtonColor ?? ColorUtil().mainColor,
+                              ),
+                            ),
+                          ),
+                        ))
+                    : Container(),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      backButton
+                          ? GestureDetector(
+                              onTap: () {
+                                onBack ?? Navigator.of(context).pop();
+                              },
+                              child: Container(
+                                color: Colors.transparent,
+                                height: double.infinity,
+                                child: Center(
+                                    child: Text(
+                                  "$actionText",
+                                  style: actionTextStyle ??
+                                      TextStyleUtil.linkLabel(
+                                          fontSize: FontUtil().lPlus,
+                                          color: actionTextColor),
+                                )),
+                              ))
+                          : Container(),
+                      Container(
+                        child: rightWidget ?? Container(),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap: () {
-                        onBack ?? Navigator.of(context).pop();
-                      },
-                      child: Text(
-                        "$actionText",
-                        style: actionTextStyle ??
-                            TextStyleUtil.linkLabel(
-                                fontSize: FontUtil().lPlus,
-                                color: actionTextColor),
-                      ),
-                    ),
-                    Container(
-                      child: rightWidget ?? Container(),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )
-        ],
+              ],
+            )
+          ],
+        ),
       ),
       automaticallyImplyLeading: false,
       backgroundColor: backgroundColor ?? Colors.transparent,

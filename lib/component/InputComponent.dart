@@ -185,6 +185,7 @@ class InputComponent {
     VoidCallback onTapTrailingIcon,
     Color trailingIconColor,
     bool readOnly = false,
+    ValueChanged<String> onChange,
   }) {
     return Container(
       width: double.infinity,
@@ -220,6 +221,7 @@ class InputComponent {
                         child: TextField(
                           controller: controller,
                           readOnly: readOnly,
+                          onChanged: onChange,
                           style: textStyle ??
                               TextStyle(
                                 color: textColor,
