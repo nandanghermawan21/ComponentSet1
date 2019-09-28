@@ -31,6 +31,7 @@ class InputComponent {
       bool readOnly = false,
       int maxLines,
       Color backgroundColor,
+      List<TextInputFormatter> formatter,
       EdgeInsetsGeometry contentPadding}) {
     return TextField(
       maxLines: maxLines,
@@ -42,8 +43,9 @@ class InputComponent {
       onSubmitted: onSubmited,
       textInputAction: textInputAction,
       onEditingComplete: onEditingComplete,
-      inputFormatters:
-          numberOnly == true ? [WhitelistingTextInputFormatter.digitsOnly] : [],
+      inputFormatters: formatter ?? numberOnly == true
+          ? [WhitelistingTextInputFormatter.digitsOnly]
+          : [],
       style: TextStyle(
         fontFamily: fontsFamily,
         fontSize: 14.0,
