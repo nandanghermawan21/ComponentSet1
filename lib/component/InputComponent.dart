@@ -43,9 +43,11 @@ class InputComponent {
       onSubmitted: onSubmited,
       textInputAction: textInputAction,
       onEditingComplete: onEditingComplete,
-      inputFormatters: formatter != null ? formatter : numberOnly == true
-          ? [WhitelistingTextInputFormatter.digitsOnly]
-          : [],
+      inputFormatters: formatter != null
+          ? formatter
+          : numberOnly == true
+              ? [WhitelistingTextInputFormatter.digitsOnly]
+              : [],
       style: TextStyle(
         fontFamily: fontsFamily,
         fontSize: 14.0,
