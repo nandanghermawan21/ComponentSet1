@@ -306,7 +306,6 @@ class InputComponent {
       ),
     );
   }
-
 }
 
 enum InputPosition {
@@ -369,14 +368,26 @@ class StateInputMessage {
   String message;
 
   StateInputMessage({
-    this.dangerColor = Colors.red, 
+    this.dangerColor = Colors.red,
     this.warningColor = Colors.orange,
     this.infoColor = Colors.green,
     this.status,
     this.message,
   });
 
-  Color get color{
+  void get setDanger {
+    this.status = StateInputMessageStatus.Danger;
+  }
+
+  void get setWarning {
+    this.status = StateInputMessageStatus.Warning;
+  }
+
+  void get setInfo {
+    this.status = StateInputMessageStatus.Info;
+  }
+
+  Color get color {
     switch (status) {
       case StateInputMessageStatus.Danger:
         return dangerColor;
@@ -389,7 +400,7 @@ class StateInputMessage {
         break;
       default:
         return infoColor;
-      break;
+        break;
     }
   }
 }
