@@ -1,4 +1,5 @@
 export 'package:component_set1/custom/drop_down_list.dart';
+import 'package:component_set1/project/holcimBeton/ColorUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
@@ -305,6 +306,7 @@ class InputComponent {
       ),
     );
   }
+
 }
 
 enum InputPosition {
@@ -360,11 +362,34 @@ enum StateInputMessageStatus {
 }
 
 class StateInputMessage {
+  Color dangerColor;
+  Color warningColor;
+  Color infoColor;
   StateInputMessageStatus status;
   String message;
 
   StateInputMessage({
+    this.dangerColor = Colors.red, 
+    this.warningColor = Colors.orange,
+    this.infoColor = Colors.green,
     this.status,
     this.message,
   });
+
+  Color get color{
+    switch (status) {
+      case StateInputMessageStatus.Danger:
+        return dangerColor;
+        break;
+      case StateInputMessageStatus.Warning:
+        return warningColor;
+        break;
+      case StateInputMessageStatus.Info:
+        return infoColor;
+        break;
+      default:
+        return infoColor;
+      break;
+    }
+  }
 }
