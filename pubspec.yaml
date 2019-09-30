@@ -28,6 +28,7 @@ dependencies:
   location: ^2.3.5
   geolocator: ^5.1.2
   datetime_picker_formfield: ^0.1.8
+  provider: ^2.0.0+1
 
   
  
