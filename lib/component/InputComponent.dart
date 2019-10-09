@@ -1,6 +1,8 @@
 export 'package:component_set1/custom/drop_down_list.dart';
+import 'package:component_set1/project/holcimBeton/ColorUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
 class InputComponent {
@@ -31,6 +33,7 @@ class InputComponent {
       bool readOnly = false,
       int maxLines,
       Color backgroundColor,
+      List<TextInputFormatter> formatter,
       EdgeInsetsGeometry contentPadding}) {
     return TextField(
       maxLines: maxLines,
@@ -42,8 +45,11 @@ class InputComponent {
       onSubmitted: onSubmited,
       textInputAction: textInputAction,
       onEditingComplete: onEditingComplete,
-      inputFormatters:
-          numberOnly == true ? [WhitelistingTextInputFormatter.digitsOnly] : [],
+      inputFormatters: formatter != null
+          ? formatter
+          : numberOnly == true
+              ? [WhitelistingTextInputFormatter.digitsOnly]
+              : [],
       style: TextStyle(
         fontFamily: fontsFamily,
         fontSize: 14.0,
@@ -185,6 +191,7 @@ class InputComponent {
     VoidCallback onTapTrailingIcon,
     Color trailingIconColor,
     bool readOnly = false,
+    ValueChanged<String> onChange,
   }) {
     return Container(
       width: double.infinity,
@@ -220,6 +227,7 @@ class InputComponent {
                         child: TextField(
                           controller: controller,
                           readOnly: readOnly,
+                          onChanged: onChange,
                           style: textStyle ??
                               TextStyle(
                                 color: textColor,
@@ -344,4 +352,55 @@ enum StateInput {
   ///
   ///
   Error
+}
+
+enum StateInputMessageStatus {
+  Danger,
+  Warning,
+  Info,
+}
+
+class StateInputMessage {
+  Color dangerColor;
+  Color warningColor;
+  Color infoColor;
+  StateInputMessageStatus status;
+  String message;
+
+  StateInputMessage({
+    this.dangerColor = Colors.red,
+    this.warningColor = Colors.orange,
+    this.infoColor = Colors.green,
+    this.status,
+    this.message,
+  });
+
+  void get setDanger {
+    this.status = StateInputMessageStatus.Danger;
+  }
+
+  void get setWarning {
+    this.status = StateInputMessageStatus.Warning;
+  }
+
+  void get setInfo {
+    this.status = StateInputMessageStatus.Info;
+  }
+
+  Color get color {
+    switch (status) {
+      case StateInputMessageStatus.Danger:
+        return dangerColor;
+        break;
+      case StateInputMessageStatus.Warning:
+        return warningColor;
+        break;
+      case StateInputMessageStatus.Info:
+        return infoColor;
+        break;
+      default:
+        return infoColor;
+        break;
+    }
+  }
 }

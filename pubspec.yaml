@@ -10,8 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    
   overlay_support: ^0.1.0
-  flutter_svg: ^0.13.0+2
+  flutter_svg: ^0.14.0
   reorderables: ^0.2.9
   component_icons:
     git:
@@ -27,7 +28,7 @@ dependencies:
   location: ^2.3.5
   geolocator: ^5.1.4+1
   datetime_picker_formfield: ^0.1.8
- 
+  provider: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:

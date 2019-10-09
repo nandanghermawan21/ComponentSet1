@@ -39,6 +39,30 @@ insert repositori ini kedalam file yaml project
       url: https://github.com/nandanghermawan21/component_set1.git
 ```
 
+buka dan ubah file android/build.gradle seperti ini
+
+```
+ dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.google.gms:google-services:4.2.0'
+    }
+```
+
+buka dan ubah file android/gradle.properties seperti ini
+
+```
+org.gradle.jvmargs=-Xmx1536M
+android.enableJetifier=true
+android.useAndroidX=true
+```
+
+naikan versi compileSdkVersion ke 28 pada file android/app/src/main/build.gradle seperti ini
+
+```
+android {
+    compileSdkVersion 28
+...
+```
 
 buka dan ubah file ios/runner/podfile menjadi seperti ini dimulai dari baris 35
 
