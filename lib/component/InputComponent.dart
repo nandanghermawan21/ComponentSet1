@@ -146,8 +146,8 @@ class InputComponent {
       {double corner = 5,
       double padding = 10,
       String value,
-      List<DropdownMenuItem<String>> items,
-      ValueChanged<String> onChangeds,
+      List<DropdownMenuItem<Object>> items,
+      ValueChanged<Object> onChangeds,
       String hint = "hint",
       Color borderColor = Colors.black38,
       Color backgroundColor}) {
