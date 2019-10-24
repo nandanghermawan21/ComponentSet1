@@ -11,8 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
     
-  flutter_svg: ^0.14.0
-  reorderables: ^0.2.9
+  flutter_svg: ^0.14.3
   component_icons:
     git:
       url: https://github.com/Renoldi/component_icon.git
@@ -23,11 +22,11 @@ dependencies:
   flutter_google_places:
     git:
       url: https://github.com/nandanghermawan21/flutter_google_places.git
-  google_maps_flutter: ^0.5.11+1
+  google_maps_flutter: ^0.5.21+8
   location: ^2.3.5
-  geolocator: ^5.1.4+1
+  geolocator: ^5.1.4+2
   datetime_picker_formfield: ^0.1.8
-  provider: ^2.0.0+1
+  provider: ^3.1.0+1
 
 dev_dependencies:
   flutter_test:

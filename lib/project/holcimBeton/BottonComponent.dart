@@ -3,7 +3,7 @@ import 'package:component_set1/component/DecorationComponent.dart';
 import 'package:component_set1/project/holcimBeton/ColorUtil.dart';
 import 'package:component_set1/project/holcimBeton/FontUtil.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as prefix0;
+// import 'package:flutter/material.dart' as prefix0;
 
 import 'TextStyleUtil.dart';
 
