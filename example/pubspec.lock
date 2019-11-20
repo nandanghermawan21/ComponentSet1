@@ -34,7 +34,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "9f300b56b97684af6e910d4b9e178a29534c4cd7"
+      resolved-ref: f3d0c344e793f874e3611635fd07b2b51939fcbd
       url: "https://github.com/Renoldi/component_icon.git"
     source: git
     version: "1.0.0+1"
