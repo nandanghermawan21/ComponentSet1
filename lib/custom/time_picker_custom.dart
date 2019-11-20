@@ -1393,8 +1393,6 @@ class _DialState extends State<_Dial> with SingleTickerProviderStateMixin {
       String label, TextStyle labelStyle, VoidCallback onTap) {
     // final TextStyle style = textTheme.subhead;
     final TextStyle style = labelStyle ?? textTheme.subhead;
-    // TODO(abarth): Handle textScaleFactor.
-    // https://github.com/flutter/flutter/issues/5939
     return _TappableLabel(
       value: value,
       painter: TextPainter(

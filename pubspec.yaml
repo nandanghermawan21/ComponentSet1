@@ -2,7 +2,7 @@ name: component_set1
 description: A new Flutter package project.
 version: 0.0.1
 author: "Nandang, Renoldi"
-homepage:
+# homepage: 
 
 environment:
   sdk: ">=2.2.0 <3.0.0"
