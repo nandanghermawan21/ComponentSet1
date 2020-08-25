@@ -107,11 +107,11 @@ class _DatePickerHeader extends StatelessWidget {
     // final TextStyle dayStyle = headerTextTheme.display1.copyWith(color: dayColor);
     // final TextStyle yearStyle = headerTextTheme.subhead.copyWith(color: yearColor);
     final TextStyle dayStyle = dayStyles ??
-        headerTextTheme.display1
-            .copyWith(color: dayColor ?? headerTextTheme.display1.color);
+        headerTextTheme.headline4
+            .copyWith(color: dayColor ?? headerTextTheme.headline4.color);
     final TextStyle yearStyle = yearStyles ??
-        headerTextTheme.subhead
-            .copyWith(color: yearColor ?? headerTextTheme.subhead.color);
+        headerTextTheme.subtitle1
+            .copyWith(color: yearColor ?? headerTextTheme.subtitle1.color);
 
     Color backgroundColor;
 
@@ -481,8 +481,8 @@ class DayPicker extends StatelessWidget {
 
         BoxDecoration decoration;
         TextStyle itemStyle = textItemStyle ??
-            themeData.textTheme.body1.copyWith(
-                color: textItemColor ?? themeData.textTheme.body1.color);
+            themeData.textTheme.bodyText2.copyWith(
+                color: textItemColor ?? themeData.textTheme.bodyText2.color);
 
         final bool isSelectedDay = selectedDate.year == year &&
             selectedDate.month == month &&
@@ -491,16 +491,16 @@ class DayPicker extends StatelessWidget {
           // The selected day gets a circle background highlight, and a contrasting text color.
           // itemStyle = themeData.accentTextTheme.body2;
           itemStyle = textSelectedStyle ??
-              themeData.accentTextTheme.body2.copyWith(
+              themeData.accentTextTheme.bodyText1.copyWith(
                   color: textSelectedColor ??
-                      themeData.accentTextTheme.body2.color);
+                      themeData.accentTextTheme.bodyText1.color);
           decoration = BoxDecoration(
             // color: themeData.accentColor,
             color: selectorColor ?? themeData.accentColor,
             shape: BoxShape.circle,
           );
         } else if (disabled) {
-          itemStyle = themeData.textTheme.body1
+          itemStyle = themeData.textTheme.bodyText2
               .copyWith(color: themeData.disabledColor);
         } else if (currentDate.year == year &&
             currentDate.month == month &&
@@ -508,7 +508,7 @@ class DayPicker extends StatelessWidget {
           // The current day gets a different text color.
           // itemStyle = themeData.textTheme.body2.copyWith(color: themeData.accentColor);
           itemStyle = currentDateStyle ??
-              themeData.textTheme.body2
+              themeData.textTheme.bodyText1
                   .copyWith(color: currentDateColor ?? themeData.accentColor);
         }
 
@@ -560,9 +560,9 @@ class DayPicker extends StatelessWidget {
                   localizations.formatMonthYear(displayedMonth),
                   // style: themeData.textTheme.subhead,
                   style: textMountStyle ??
-                      themeData.textTheme.subhead.copyWith(
+                      themeData.textTheme.subtitle1.copyWith(
                           color: textMountColor ??
-                              themeData.textTheme.subhead.color),
+                              themeData.textTheme.subtitle1.color),
                 ),
               ),
             ),
@@ -987,7 +987,7 @@ class _YearPickerState extends State<YearPicker> {
   Widget build(BuildContext context) {
     assert(debugCheckHasMaterial(context));
     final ThemeData themeData = Theme.of(context);
-    final TextStyle style = themeData.textTheme.body1;
+    final TextStyle style = themeData.textTheme.bodyText2;
     return ListView.builder(
       dragStartBehavior: widget.dragStartBehavior,
       controller: scrollController,
@@ -997,7 +997,7 @@ class _YearPickerState extends State<YearPicker> {
         final int year = widget.firstDate.year + index;
         final bool isSelected = year == widget.selectedDate.year;
         final TextStyle itemStyle = isSelected
-            ? themeData.textTheme.headline
+            ? themeData.textTheme.headline5
                 .copyWith(color: themeData.accentColor)
             : style;
         return InkWell(
@@ -1132,6 +1132,12 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
         break;
       case TargetPlatform.iOS:
         break;
+      case TargetPlatform.linux:
+        break;
+      case TargetPlatform.macOS:
+        break;
+      case TargetPlatform.windows:
+        break;
     }
   }
 
@@ -1220,6 +1226,7 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     final Widget picker = _buildPicker();
+    // ignore: deprecated_member_use
     final Widget actions = ButtonTheme.bar(
       child: ButtonBar(
         children: <Widget>[
@@ -1441,17 +1448,17 @@ Future<DateTime> showDatePicker({
     iconBackColor: iconBackColor,
     iconNext: iconNext,
     iconNextColor: iconNextColor,
-    currentDateColor:currentDateColor,
-    currentDateStyle:currentDateStyle,
-    selectorColor:selectorColor,
-    textHeaderColor:textHeaderColor,
-    textHeaderStyle:textHeaderStyle,
-    textItemColor:textItemColor,
-    textItemStyle:textItemStyle,
-    textMountColor:textMountColor,
-    textMountStyle:textMountStyle,
-    textSelectedColor:textSelectedColor,
-    textSelectedStyle:textSelectedStyle,
+    currentDateColor: currentDateColor,
+    currentDateStyle: currentDateStyle,
+    selectorColor: selectorColor,
+    textHeaderColor: textHeaderColor,
+    textHeaderStyle: textHeaderStyle,
+    textItemColor: textItemColor,
+    textItemStyle: textItemStyle,
+    textMountColor: textMountColor,
+    textMountStyle: textMountStyle,
+    textSelectedColor: textSelectedColor,
+    textSelectedStyle: textSelectedStyle,
   );
 
   if (textDirection != null) {

@@ -237,9 +237,9 @@ class _DayPeriodControl extends StatelessWidget {
     final Color activeColor = fragmentContext.activeColor;
     final Color inactiveColor = fragmentContext.inactiveColor;
     final bool amSelected = selectedTime.period == DayPeriod.am;
-    final TextStyle amStyle = headerTextTheme.subhead
+    final TextStyle amStyle = headerTextTheme.subtitle1
         .copyWith(color: amSelected ? activeColor : inactiveColor);
-    final TextStyle pmStyle = headerTextTheme.subhead
+    final TextStyle pmStyle = headerTextTheme.subtitle1
         .copyWith(color: !amSelected ? activeColor : inactiveColor);
     final bool layoutPortrait = orientation == Orientation.portrait;
 
@@ -802,9 +802,9 @@ class _TimePickerHeader extends StatelessWidget {
     assert(orientation != null);
     switch (orientation) {
       case Orientation.portrait:
-        return headerTextTheme.display3.copyWith(fontSize: 60.0);
+        return headerTextTheme.headline2.copyWith(fontSize: 60.0);
       case Orientation.landscape:
-        return headerTextTheme.display2.copyWith(fontSize: 50.0);
+        return headerTextTheme.headline2.copyWith(fontSize: 50.0);
     }
     return null;
   }
@@ -1392,7 +1392,7 @@ class _DialState extends State<_Dial> with SingleTickerProviderStateMixin {
   _TappableLabel _buildTappableLabel(TextTheme textTheme, int value,
       String label, TextStyle labelStyle, VoidCallback onTap) {
     // final TextStyle style = textTheme.subhead;
-    final TextStyle style = labelStyle ?? textTheme.subhead;
+    final TextStyle style = labelStyle ?? textTheme.subtitle1;
     return _TappableLabel(
       value: value,
       painter: TextPainter(
@@ -1637,6 +1637,12 @@ class _TimePickerDialogState extends State<_TimePickerDialog> {
         break;
       case TargetPlatform.iOS:
         break;
+      case TargetPlatform.linux:
+        break;
+      case TargetPlatform.macOS:
+        break;
+      case TargetPlatform.windows:
+        break;
     }
   }
 
@@ -1732,6 +1738,7 @@ class _TimePickerDialogState extends State<_TimePickerDialog> {
       ),
     );
 
+    // ignore: deprecated_member_use
     final Widget actions = ButtonTheme.bar(
       child: ButtonBar(
         children: <Widget>[
